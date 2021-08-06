@@ -23,6 +23,6 @@ test {
 }
 
 tasks.withType(Javadoc) {
-      failOnError=false
-      include='src/main/java/com/example/sandbox/*'
+      failOnError false
+      exclude 'com/example/sandbox/**'
 }
