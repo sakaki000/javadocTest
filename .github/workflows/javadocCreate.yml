@@ -9,7 +9,6 @@ jobs:
      
      steps:
         - uses: actions/checkout@v2
-        - name: Checkout ️
         - name: Build Javadocs
           run: |
             echo "Building javadocs with gradle"
