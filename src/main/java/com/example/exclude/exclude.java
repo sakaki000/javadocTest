@@ -9,6 +9,7 @@ public class exclude {
     /***
      * @param in input
      * @param out output 
+     * @return test
      */
     public String get(String in, String out) {
         return "Hello";
@@ -18,6 +19,7 @@ public class exclude {
     /**
     *  コメントの説明文
     *  @deprecated 別のメソッドに置き換えられました
+     * @return test
     */
     public String out() {
         return "dep";
