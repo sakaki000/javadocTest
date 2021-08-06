@@ -23,5 +23,16 @@ test {
 }
 
 tasks.withType(Javadoc) {
-      failOnError false
+      failOnError=false
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java/com/example/sandbox'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
 }
