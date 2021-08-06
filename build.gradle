@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example'
+group = 'com.example.sandbox
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -24,15 +24,4 @@ test {
 
 tasks.withType(Javadoc) {
       failOnError=false
-}
-
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/java/com/example/sandbox'
-        }
-        resources {
-            srcDir 'src/resources'
-        }
-    }
 }
