@@ -1,11 +1,10 @@
 name: Automatically Deploy Javadocs
 
-on:
-   push:
-     branches: [ main ]
+on: [push, pull_request]
 
 jobs:
    build:
+   
      runs-on: ubuntu-latest
      
      steps:
