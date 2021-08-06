@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example.sandbox'
+group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -24,4 +24,5 @@ test {
 
 tasks.withType(Javadoc) {
       failOnError=false
+      include='src/main/java/com/example/sandbox/*.java'
 }
