@@ -26,10 +26,20 @@ jobs:
          echo "Creating .nojekyll to have Github pages deploy html as is:"
          touch .nojekyll
          
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          branch: javadocTest # The branch the action should deploy to.
-          folder: build/docs/javadoc/ # The folder the action should deploy.
+      #- name: Deploy
+      #  uses: JamesIves/github-pages-deploy-action@4.0.0
+      #  with:
+      #    branch: javadocTest # The branch the action should deploy to.
+      #    folder: build/docs/javadoc/ # The folder the action should deploy.
 
-
+      - name: Copy to Documentation Website Location
+        run: |
+         cp -r build/docs/javadoc/* docs
+      - name: Commit documentation changes
+        run: |
+         if [[ `git status --porcelain` ]]; then
+           git config --global user.name 'sakaki000'
+           git config --global user.email 'terawaki.t.saze@gmail.com'
+           git add -A
+           git commit -m "Automated API website updates."
+         fi
