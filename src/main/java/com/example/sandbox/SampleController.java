@@ -18,6 +18,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
+    * @return String String
     *  @deprecated 別のメソッドに置き換えられました
     */
     public String out() {
