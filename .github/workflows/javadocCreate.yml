@@ -1,6 +1,8 @@
 name: Automatically Deploy Javadocs
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
 
 jobs:
    build:
@@ -23,8 +25,34 @@ jobs:
          cd build/docs/javadoc/
          echo "Creating .nojekyll to have Github pages deploy html as is:"
          touch .nojekyll
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+         
+      #- name: Deploy
+      #  uses: JamesIves/github-pages-deploy-action@4.0.0
+      #  with:
+      #    branch: main # The branch the action should deploy to.
+      #    folder: build/docs/javadoc/ # The folder the action should deploy.
+
+      - name: Copy to Documentation Website Location
+        run: |
+         rm -rf docs
+         cp -rf build/docs/javadoc/. docs
+
+      - name: Tidy up the javadocs
+        id: tidy
+        uses: cicirello/javadoc-cleanup@v1
         with:
-          branch: main # The branch the action should deploy to.
-          folder: build/docs/javadoc/ # The folder the action should deploy.
+          base-url-path: https://URL.FOR.YOUR.WEBSITE.GOES.HERE/
+          path-to-root: docs
+    
+      - name: Log javadoc-cleanup output
+        run: |
+         echo "modified-count = ${{ steps.tidy.outputs.modified-count }}"
+    
+      - name: Commit documentation changes
+        run: |
+         if [[ `git status --porcelain` ]]; then
+           git config --global user.name 'sakaki000'
+           git config --global user.email 'terawaki.t.saze@gmail.com'
+           git add -A
+           git commit -m "Automated API website updates."
+         fi
