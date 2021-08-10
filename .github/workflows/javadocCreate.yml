@@ -22,6 +22,6 @@ jobs:
          echo "Building javadocs with gradle"
          ! ./gradlew javadoc
          echo "Moving to javadocs directory:"
-         cd build/docs/javadoc/
+         cd docs/javadoc/
          echo "Creating .nojekyll to have Github pages deploy html as is:"
          touch .nojekyll
