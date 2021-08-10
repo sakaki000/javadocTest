@@ -36,18 +36,6 @@ jobs:
         run: |
          rm -rf docs
          cp -rf build/docs/javadoc/. docs
-
-      - name: Tidy up the javadocs
-        id: tidy
-        uses: cicirello/javadoc-cleanup@v1
-        with:
-          base-url-path: https://URL.FOR.YOUR.WEBSITE.GOES.HERE/
-          path-to-root: docs
-    
-      - name: Log javadoc-cleanup output
-        run: |
-         echo "modified-count = ${{ steps.tidy.outputs.modified-count }}"
-    
       - name: Commit documentation changes
         run: |
          if [[ `git status --porcelain` ]]; then
