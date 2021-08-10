@@ -23,3 +23,8 @@ jobs:
          cd build/docs/javadoc/
          echo "Creating .nojekyll to have Github pages deploy html as is:"
          touch .nojekyll
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: javadocTest # The branch the action should deploy to.
+          folder: build/docs/javadoc/ # The folder the action should deploy.
