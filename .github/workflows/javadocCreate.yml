@@ -34,13 +34,15 @@ jobs:
       
 
       - name: Cleanup
-        working-directory: ./doc
+        working-directory: ./docs
         run: |
           rm -rf *
       - name: Generate API doc
         run: |
-          yarn run generate-api-docs
+          ./gradlew javadoc
       - name: Update API docs
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
           commit_message: Update API docs
+          file_pattern: build/docs/javadoc/*
+          repository: ./docs/
