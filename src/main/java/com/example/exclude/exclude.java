@@ -1,9 +1,9 @@
-package com.example.sandbox;
+package com.example.exclude;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class SampleController {
+public class exclude {
 
 
     /***
