@@ -35,7 +35,7 @@ jobs:
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
       - name: Update API docs
-        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update API docs
           repository: ./docs/
