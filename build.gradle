@@ -27,5 +27,5 @@ tasks.withType(Javadoc) {
       failOnError false
       
       // 対象ディレクトリの指定
-      include 'com/example/exclude/**'
+      // include 'com/example/exclude/**'
 }
