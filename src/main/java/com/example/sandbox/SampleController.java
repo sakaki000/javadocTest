@@ -7,7 +7,7 @@ public class SampleController {
 
 
     /***
-     * @param in input
+     * @param in inputinputinputinputinputinputinputinput
      * @param out output 
      * @return String String
      */
