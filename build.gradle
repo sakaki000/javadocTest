@@ -21,3 +21,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+tasks.withType(Javadoc) {
+      // javadoc生成中にエラーが発生した時にタスクを失敗させるかどうか
+      failOnError false
+      
+      // 対象ディレクトリの指定
+      include 'com/example/exclude/**'
+}
