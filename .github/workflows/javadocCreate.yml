@@ -18,13 +18,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build Javadocs
-        run: |
-         echo "Building javadocs with gradle"
-         ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
-         echo "Moving to javadocs directory:"
-         cd build/docs/javadoc/
-         echo "Creating .nojekyll to have Github pages deploy html as is:"
-         touch .nojekyll
+        run: "! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?"
          
       #- name: Deploy
       #  uses: JamesIves/github-pages-deploy-action@4.0.0
