@@ -39,4 +39,4 @@ jobs:
         with:
           commit_message: Update API docs
           repository: ./docs/
-          file_pattern: ./docs/*.*
+          file_pattern: ./docs/*
