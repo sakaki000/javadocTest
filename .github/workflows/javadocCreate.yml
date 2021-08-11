@@ -34,7 +34,6 @@ jobs:
       
 
       - name: Cleanup
-        working-directory: ./docs
         run: |
           rm -rf *
       - name: Generate API doc
