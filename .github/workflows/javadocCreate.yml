@@ -32,18 +32,15 @@ jobs:
       #    branch: javadocTest # The branch the action should deploy to.
       #    folder: build/docs/javadoc/ # The folder the action should deploy.
       
-      # clean up the javadoc files including removing timestamps. OPTIONAL.
-      - name: Tidy up the javadocs
-        id: tidy
-        uses: cicirello/javadoc-cleanup@v1
-        with:
-          path-to-root: docs
- 
-      # store the doc files
-      - name: Upload Output Directory
-        uses: actions/upload-artifact@v2
-        with:
-          name: doc-files
-          path: docs
-          retention-days: 1
 
+      - name: Cleanup
+        working-directory: ./doc
+        run: |
+          rm -rf *
+      - name: Generate API doc
+        run: |
+          yarn run generate-api-docs
+      - name: Update API docs
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: Update API docs
