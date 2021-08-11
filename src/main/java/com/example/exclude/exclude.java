@@ -7,7 +7,7 @@ public class exclude {
 
 
     /***
-     * @param in inputinputinputinputinputinputinputinput
+     * @param in input
      * @param out output 
      * @return String String
      */
