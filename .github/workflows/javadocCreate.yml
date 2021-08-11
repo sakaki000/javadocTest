@@ -36,9 +36,9 @@ jobs:
       - name: Cleanup
         run: |
           rm -rf ./docs/*
+          cp -r build/docs/javadoc/* ./docs/
       - name: Update API docs
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
           commit_message: Update API docs
-          file_pattern: build/docs/javadoc/*
           repository: ./docs/
