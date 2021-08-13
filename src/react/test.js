@@ -1,16 +1,9 @@
-import React, { Component } from 'react';
-import { FormApp } from './FormApp';
-
 /**
- * これはテストです
- * @param {string} in - 表示したい名前を指定する。
+ * Helloという文字列を返します。
+ * @module hello
+ * @param {string} name - 表示したい名前を指定する。
+ * @return {string} - [Hello + name]という形式で戻る。
  */
-class App extends Component(Stinrg in) {
-  render() {
-    return (
-      <FormApp />
-    );
-  }
+module.exports = hello = (name) => {
+    return "Hello" + name;
 }
-
-export default App;
