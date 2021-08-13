@@ -3,7 +3,7 @@ import { FormApp } from './FormApp';
 
 /**
  * これはテストです
- * @param in input
+ * @param {string} in - 表示したい名前を指定する。
  */
 class App extends Component(Stinrg in) {
   render() {
