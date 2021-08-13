@@ -3,8 +3,9 @@ import { FormApp } from './FormApp';
 
 /**
  * これはテストです
+ * @param in input
  */
-class App extends Component {
+class App extends Component(Stinrg in) {
   render() {
     return (
       <FormApp />
