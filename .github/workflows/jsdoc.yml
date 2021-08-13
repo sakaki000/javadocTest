@@ -17,3 +17,8 @@ jobs:
         with:
           source_dir: ./src/react/
           output_dir: ./docs
+      - name: Update API docs
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update API docs
+          repository: ./docs/
