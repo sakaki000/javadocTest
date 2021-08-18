@@ -22,7 +22,7 @@ test {
 	useJUnitPlatform()
 }
 
-tasks javadoc(type: Javadoc, overwrite: true) {
+tasks.withType(Javadoc) {
       // javadoc生成中にエラーが発生した時にタスクを失敗させるかどうか
       failOnError false
       
