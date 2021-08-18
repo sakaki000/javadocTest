@@ -7,7 +7,7 @@ public class exclude {
 
 
     /***
-     * @param in inputinputinput
+     * @param in input
      * @param out output 
      * @return String String
      */
@@ -18,7 +18,7 @@ public class exclude {
 
     /**
     *  コメントの説明文
-    * @return String StringTest
+    * @return String String
     * @deprecated 別のメソッドに置き換えられました
     */
     public String out() {
