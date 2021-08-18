@@ -11,9 +11,9 @@ repositories {
 }
 
 dependencies {
-	classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE'
-	classpath 'org.sonarsource.scanner.gradle:sonargube-gradle-plugin:2.7'
-	classpath 'org.ajoberstar.gragit:gragit-gradle:3.1.1'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
 tasks.withType(Javadoc) {
