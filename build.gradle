@@ -1,25 +1,11 @@
-plugins {
-	id 'org.springframework.boot' version '2.4.2'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-}
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
 repositories {
-	mavenCentral()
+	url 'https://plugins.gradle.org/m2/'
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-	useJUnitPlatform()
+	classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE'
+	classpath 'org.sonarsource.scanner.gradle:sonargube-gradle-plugin:2.7'
+	classpath 'org.ajoberstar.gragit:gragit-gradle:3.1.1'
 }
 
 tasks.withType(Javadoc) {
