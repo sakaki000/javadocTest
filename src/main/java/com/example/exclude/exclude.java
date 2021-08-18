@@ -18,7 +18,7 @@ public class exclude {
 
     /**
     *  コメントの説明文
-    * @return String StringStringStringStringStringString
+    * @return String テスト
     *  @deprecated 別のメソッドに置き換えられました
     */
     public String out() {
