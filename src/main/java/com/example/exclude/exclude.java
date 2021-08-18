@@ -19,7 +19,7 @@ public class exclude {
     /**
     *  コメントの説明文
     * @return String StringTest
-    *  @deprecated 別のメソッドに置き換えられました
+    * @deprecated 別のメソッドに置き換えられました
     */
     public String out() {
         return "dep";
