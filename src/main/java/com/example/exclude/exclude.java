@@ -7,7 +7,7 @@ public class exclude {
 
 
     /***
-     * @param in WorkYear
+     * @param in WorkHope
      * @param out output
      * @return String String
      */
