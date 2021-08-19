@@ -1,4 +1,4 @@
-name: Automatically Deploy Javadocs
+name: Check Javadocs
 
 on:
   push:
