@@ -2,8 +2,9 @@ name: Automatically Deploy Javadocs
 
 on:
   push:
-    branches: [ main ]
-    types: [closed]
+#    branches: [ main ]
+#    types: [closed]
+    branches: [ testJavadocBranch ]
 
 jobs:
    build:
