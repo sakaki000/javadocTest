@@ -2,13 +2,13 @@ name: Check Javadocs
 
 on:
   push:
-    branches: [ testJavadocBranch ]
+    branches:
+      - testJavadocBranch
 
 jobs:
    build:
 
       runs-on: ubuntu-latest
-      if: contains(github.head_ref, 'testJavadocBranch')
       
       steps:
       - uses: actions/checkout@v2
