@@ -2,7 +2,7 @@ name: Check Javadocs
 
 on:
   push:
-    branches: [ testJavadocBranch ]
+    branches: [ testJavadoc ]
 
 jobs:
    build:
