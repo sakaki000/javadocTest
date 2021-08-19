@@ -3,7 +3,7 @@ name: Automatically Deploy Javadocs
 on:
   push:
     branches: [ main ]
-  pull_request:
+    types: [closed]
 
 jobs:
    build:
