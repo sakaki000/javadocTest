@@ -1,4 +1,3 @@
-name: Check Javadocs
-
+name: main
 on:
   workflow_dispatch
