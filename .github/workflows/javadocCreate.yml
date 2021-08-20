@@ -1,7 +1,8 @@
 name: Automatically Deploy Javadocs
 on:
-  push:
-    branches: [ Javadoc** ]
+#  push:
+#    branches: [ Javadoc** ]
+  workflow_dispatch
 
 jobs:
    build:
