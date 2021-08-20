@@ -1,10 +1,7 @@
 name: Automatically Deploy Javadocs
-
 on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+  push:
+    branches: [ Javadoc** ]
 
 jobs:
    build:
