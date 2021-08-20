@@ -1,22 +1,23 @@
-#name: Check Javadocs
+name: Check Javadocs
 
-#on:
+on:
 #  push:
 #    branches: [ Javadoc** ]
+  workflow_dispatch
 
-#jobs:
-#   build:
+jobs:
+   build:
 
-#      runs-on: ubuntu-latest
-#      
-#      steps:
-#      - uses: actions/checkout@v2
-#      - name: Set up JDK 1.8
-#        uses: actions/setup-java@v1
-#        with:
-#          java-version: 1.8
-#      - name: Grant execute permission for gradlew
-#        run: chmod +x gradlew
-#      - name: Build Javadocs
-#        run: |
-#         ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
+      runs-on: ubuntu-latest
+      
+      steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build Javadocs
+        run: |
+         ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
