@@ -8,7 +8,7 @@ public class exclude {
 
     /***
      * @param in input
-     * @param out output
+     * @param out outputoutput
      * @return String String
      */
     public String get(String in, String out) {
