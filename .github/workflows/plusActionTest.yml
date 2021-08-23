@@ -1,0 +1,10 @@
+name: plusActionTest
+on:
+  workflow_dispatch
+jobs:
+   build:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Set the value
+        run: |
+          echo "test"
