@@ -17,8 +17,6 @@ jobs:
           echo "##[set-output name=result;]$(git branch -a --format="%(refname:short)" | grep -e javadocOnly)" 
 
       - name: Check javadoc branch exist
-        env:
-          RESULT: ${{steps.check.outputs.result}}
+        if: ${{ steps.check.outputs.result }} == 'origin/javadocOnly'
         run: |
-          echo ${{ steps.check.outputs.result }}
-          echo $RESULT
+          echo 'branch exist'
