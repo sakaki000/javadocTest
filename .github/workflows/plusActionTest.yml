@@ -14,15 +14,7 @@ jobs:
       - id: check
         run: |
           git fetch
-          git branch -a --format="%(refname:short)" | grep -e javadocOnly
+          branchName=$(git branch -a --format="%(refname:short)" | grep -e javadocOnly)
 
       - name: Check javadoc branch exist
-        run: echo steps.check.conclusion
-      
-      - name: Check javadoc branch exist
-        if: steps.check.conclusion == ''
-        run: echo 'not exist'
-        
-      - name: check javadoc branch exist 2
-        if: steps.check.conclusion == 'origin/javadocOnly'
-        run: echo 'year exist'
+        run: echo ${{ steps.check.outputs.branchName }}
