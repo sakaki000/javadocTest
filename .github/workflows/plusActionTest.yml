@@ -15,6 +15,9 @@ jobs:
         run: |
           git fetch
           git branch -a --format="%(refname:short)" | grep -e javadocOnly
+
+      - name: Check javadoc branch exist
+        run: echo steps.check.conclusion
       
       - name: Check javadoc branch exist
         if: steps.check.conclusion == ''
