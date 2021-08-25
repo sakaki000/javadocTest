@@ -8,3 +8,4 @@ jobs:
       - name: Set the value
         run: |
           echo "test"
+          
