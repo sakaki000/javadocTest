@@ -11,7 +11,6 @@ jobs:
         with:
           ref: 'main'
       # javadoc専用ブランチの存在確認
-      - name: Check javadoc branch exist
       - id: check
         run: |
           git fetch
