@@ -15,8 +15,7 @@ jobs:
       - name: Check javadoc branch exist
         id: check
         run: |
-          BRANCH="javadocOnly"
-          git branch -a --format="%(refname:short)" | grep -e ^$BRANCH$
+          git branch -a --format="%(refname:short)" | grep -e javadocOnly
       - name: Check javadoc branch exist
         if: steps.check.conclusion == ''
         #env:
