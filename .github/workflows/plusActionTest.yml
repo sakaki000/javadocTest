@@ -24,7 +24,7 @@ jobs:
           # 開発用ブランチへ移動
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む
-          git merge origin master
+          git merge origin main
 
       # javadoc専用ブランチがなければmasterのソースをもとに作成
       - name: Check javadoc branch not exist
