@@ -24,4 +24,5 @@ jobs:
       - name: Check javadoc branch not exist
         if: "!(steps.check.outputs.result == 'origin/javadocOnly')"
         run: |
-          echo 'branch not exist'
+          git checkout -b javadocOnly
+          git push origin javadocOnly
