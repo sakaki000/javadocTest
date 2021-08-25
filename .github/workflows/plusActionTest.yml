@@ -17,11 +17,11 @@ jobs:
           echo "##[set-output name=result;]$(git branch -a --format="%(refname:short)" | grep -e javadocOnly)" 
 
       - name: Check javadoc branch exist
-        if: ${{ steps.check.outputs.result }} == 'origin/javadocOnly'
+        if: (steps.check.outputs.result == 'origin/javadocOnly')
         run: |
           echo 'branch exist'
 
       - name: Check javadoc branch not exist
-        if: ${{ steps.check.outputs.result }} != 'origin/javadocOnly'
+        if: "!(steps.check.outputs.result == 'origin/javadocOnly')"
         run: |
           echo 'branch not exist'
