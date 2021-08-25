@@ -21,6 +21,10 @@ jobs:
       - name: Check javadoc branch exist
         if: (steps.check.outputs.branch == 'origin/javadocOnly')
         run: |
+          # masterブランチへ移動
+          git checkout main
+          # git pullでmasterを最新に
+          git pull origin main
           # 開発用ブランチへ移動
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む
