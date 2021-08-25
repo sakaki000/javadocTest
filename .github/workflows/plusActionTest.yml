@@ -14,7 +14,7 @@ jobs:
       # javadoc専用ブランチの存在確認
       - name: Check javadoc branch exist
         id: check
-        run: git branch -a | grep 'remotes/origin/javadocOnly'
+        run: git branch -a | grep -v main
       
       - name: Check javadoc branch exist
         if: steps.check.conclusion == ''
