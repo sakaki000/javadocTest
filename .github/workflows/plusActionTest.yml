@@ -4,9 +4,7 @@ on:
 
 jobs:
    build:
-
-      runs-on: ubuntu-latest
-      
+      runs-on: ubuntu-latest      
       steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
@@ -19,15 +17,7 @@ jobs:
         run: |
          ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
          cd build/docs/javadoc/
-         touch .nojekyll
-         
-      #- name: Deploy
-      #  uses: JamesIves/github-pages-deploy-action@4.0.0
-      #  with:
-      #    branch: javadocTest # The branch the action should deploy to.
-      #    folder: build/docs/javadoc/ # The folder the action should deploy.
       
-
       - name: Cleanup
         run: |
           rm -rf ./docs/*
@@ -35,5 +25,6 @@ jobs:
       - name: Update API docs
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update API docs
+          branch: javadocOnly
+          commit_message: Update javadoc documents
           repository: ./docs/
