@@ -13,7 +13,6 @@ jobs:
 
       # javadoc専用ブランチの存在確認
       - name: Check javadoc branch exist
-        id: check
         run: |
           git branch -a --format="%(refname:short)" | grep -e javadocOnly
       - name: Check javadoc branch exist
