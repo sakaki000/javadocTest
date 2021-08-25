@@ -6,10 +6,6 @@ jobs:
    build:
       runs-on: ubuntu-latest      
       steps:
-      # mainブランチのソースをチェックアウト
-      - uses: actions/checkout@v2
-        with:
-          ref: 'main'
 
       # javadoc専用ブランチの存在確認
       - name: Check javadoc branch exist
