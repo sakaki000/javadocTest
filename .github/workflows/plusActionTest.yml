@@ -17,4 +17,4 @@ jobs:
           echo "##[set-output name=branch;]$(echo ${git branch -a --format="%(refname:short)" | grep -e javadocOnly})"
 
       - name: Check javadoc branch exist
-        run: echo ${{ steps.check.outputs.branchName }}
+        run: echo ${{ steps.check.outputs.branch }}
