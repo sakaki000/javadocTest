@@ -15,4 +15,11 @@ jobs:
         run: |
           git fetch
           git branch -a --format="%(refname:short)" | grep -e javadocOnly
-
+      
+      - name: Check javadoc branch exist
+        if: steps.check.conclusion == ''
+        run: echo 'not exist'
+        
+      - name: check javadoc branch exist 2
+        if: steps.check.conclusion == 'origin/javadocOnly'
+        run: echo 'year exist'
