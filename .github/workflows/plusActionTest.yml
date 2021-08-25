@@ -20,3 +20,8 @@ jobs:
         if: ${{ steps.check.outputs.result }} == 'origin/javadocOnly'
         run: |
           echo 'branch exist'
+
+      - name: Check javadoc branch exist
+        if: ${{ steps.check.outputs.result }} != 'origin/javadocOnly'
+        run: |
+          echo 'branch not exist'
