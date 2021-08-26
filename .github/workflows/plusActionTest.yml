@@ -68,12 +68,12 @@ jobs:
       - name: Build Javadocs
         run: |
          ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
-         cd build/docs/javadoc/
          
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          if ! diff -rq build/docs/javadoc/ ./docs/ &>/dev/null; then
+          echo diff -rq build/docs/javadoc/ ./docs/ | wc -l > 0
+          if diff -rq build/docs/javadoc/ ./docs/ | wc -l > 0 then
             rm -rf ./docs/*
             cp -r build/docs/javadoc/* ./docs/
             git add ./docs/*
