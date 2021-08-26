@@ -20,7 +20,7 @@ jobs:
         id: check
         run: |
           git fetch
-          echo ##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e $env.BRANCH_JAVADOC)
+          echo ##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e env.BRANCH_JAVADOC)
 
       # git configの設定
       - uses: fregante/setup-git-user@v1
