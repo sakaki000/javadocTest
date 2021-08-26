@@ -42,6 +42,7 @@ jobs:
           
           mkdir -p ./docs
           touch ./docs/readme.txt
+          git commit -m "docsディレクトリ作成"
           git push origin javadocOnly
 
 
