@@ -73,8 +73,7 @@ jobs:
       - name: Update javadoc
         run: |
           COUNT=$(diff -r -q  build/docs/javadoc/ ./docs/ | wc -l)
-          echo "$COUNT"
-          if $COUNT > 0 ; then
+          if [ $COUNT -gt 0 ]; then
             rm -rf ./docs/*
             cp -r build/docs/javadoc/* ./docs/
             git add ./docs/*
