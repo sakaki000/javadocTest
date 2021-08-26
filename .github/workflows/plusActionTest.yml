@@ -28,7 +28,7 @@ jobs:
           # git pullでmasterを最新に
           git pull origin main
           # 開発用ブランチへ移動
-          git checkout javadocOnly
+          git checkout --theirs javadocOnly
           # mergeコマンドでmaserの内容を取り込む
           git merge --allow-unrelated-histories origin/main
           # mainブランチのソースをjavadoc専用ブランチにpush
