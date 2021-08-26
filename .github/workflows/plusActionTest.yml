@@ -39,6 +39,11 @@ jobs:
           git checkout -b javadocOnly main
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
+          
+          mkdir -p ./docs
+          git add -A
+          git commit -m "create docs directory"
+          git push origin javadocOnly
 
       # JDKの設定
       - name: Set up JDK 1.8
