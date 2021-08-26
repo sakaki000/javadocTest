@@ -24,21 +24,10 @@ jobs:
 
       # git configの設定
       - uses: fregante/setup-git-user@v1
-      
-      # javadoc専用ブランチがあればmasterのソースに更新
-      - name: Merge branch
-        if: (steps.check.outputs.branch == origin/${{env.BRANCH_JAVADOC}})
-        run: |
-          #javadoc専用ブランチをチェックアウト
-          git checkout ${{env.BRANCH_JAVADOC}}
-          # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
-          git merge --allow-unrelated-histories -Xtheirs ${{'origin/'}}${{env.BRANCH_MASTER}}
-          # mainブランチのソースをjavadoc専用ブランチにpush
-          git push origin ${{env.BRANCH_JAVADOC}}
 
       # javadoc専用ブランチがなければmasterのソースをもとに作成
       - name: Create branch
-        if: "!(steps.check.outputs.branch == origin/${{env.BRANCH_JAVADOC}})"
+        if: "!(steps.check.outputs.branch == 'origin/${{env.BRANCH_JAVADOC}}')"
         run: |
           # javadoc専用ブランチを作成
           git checkout -b ${{env.BRANCH_JAVADOC}} ${{env.BRANCH_MASTER}}
@@ -51,7 +40,18 @@ jobs:
           git add .
           git commit -m "create docs directory"
           git push origin ${{env.BRANCH_JAVADOC}}
-
+      
+      # javadoc専用ブランチがあればmasterのソースに更新
+      - name: Merge branch
+        if: "(steps.check.outputs.branch == 'origin/${{env.BRANCH_JAVADOC}}')"
+        run: |
+          #javadoc専用ブランチをチェックアウト
+          git checkout ${{env.BRANCH_JAVADOC}}
+          # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
+          git merge --allow-unrelated-histories -Xtheirs ${{'origin/'}}${{env.BRANCH_MASTER}}
+          # mainブランチのソースをjavadoc専用ブランチにpush
+          git push origin ${{env.BRANCH_JAVADOC}}
+          
       # JDKの設定
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
