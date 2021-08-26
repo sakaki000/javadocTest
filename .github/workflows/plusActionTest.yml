@@ -30,7 +30,7 @@ jobs:
         if: (steps.check.outputs.branch == ${{'origin/'}}${{env.BRANCH_JAVADOC}})
         run: |
           #javadoc専用ブランチをチェックアウト
-          git checkout $env.BRANCH_JAVADOC
+          git checkout ${{env.BRANCH_JAVADOC}}
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
           git merge --allow-unrelated-histories -Xtheirs ${{'origin/'}}${{env.BRANCH_MASTER}}
           # mainブランチのソースをjavadoc専用ブランチにpush
