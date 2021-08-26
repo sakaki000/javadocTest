@@ -21,6 +21,8 @@ jobs:
       - name: Check javadoc branch exist
         if: (steps.check.outputs.branch == 'origin/javadocOnly')
         run: |
+          git config --global user.email "terawaki.t.saze@gmail.com"
+          git config --global user.name "sakaki000"
           # masterブランチへ移動
           git checkout main
           # git pullでmasterを最新に
