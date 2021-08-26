@@ -73,7 +73,7 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          if diff -r build/docs/javadoc/ ./docs/
+          if diff -r build/docs/javadoc/ ./docs/;
           then
             rm -rf ./docs/*
             cp -r build/docs/javadoc/* ./docs/
