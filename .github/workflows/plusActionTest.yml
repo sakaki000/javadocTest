@@ -23,10 +23,6 @@ jobs:
         run: |
           git config --global user.email "terawaki.t.saze@gmail.com"
           git config --global user.name "sakaki000"
-          # masterブランチへ移動
-          git checkout main
-          # git pullでmasterを最新に
-          git pull origin main
           # 開発用ブランチへ移動
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む
