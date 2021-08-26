@@ -7,7 +7,7 @@ public class SampleController {
 
 
     /***
-     * @param in inputinputinputinputinputinputinputinput
+     * @param in main_mirror
      * @param out output 
      * @return String String
      */
