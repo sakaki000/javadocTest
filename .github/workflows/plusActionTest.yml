@@ -37,6 +37,7 @@ jobs:
         run: |
           # javadoc専用ブランチを作成
           git checkout -b javadocOnly main
+          mkdir -p ./docs
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
 
@@ -59,7 +60,6 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Cleanup
         run: |
-          mkdir -p ./docs
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
           
