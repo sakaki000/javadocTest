@@ -72,7 +72,7 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          COUNT=$(diff -r -q  build/docs/javadoc/ ./docs/ | wc)
+          COUNT=$(diff -r -q  build/docs/javadoc/ ./docs/ | wc -l)
           if [$COUNT > 0]; then
             rm -rf ./docs/*
             cp -r build/docs/javadoc/* ./docs/
