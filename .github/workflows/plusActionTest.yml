@@ -38,6 +38,7 @@ jobs:
           # javadoc専用ブランチを作成
           git checkout -b javadocOnly main
           mkdir -p ./docs
+          touch ./docs/.javadoc
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
 
