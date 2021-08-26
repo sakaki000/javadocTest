@@ -16,7 +16,8 @@ jobs:
           ref: 'main'
           
       # javadoc専用ブランチの存在確認
-      - id: check javadoc branch exist
+      - name: check javadoc branch exist
+      - id: check
         run: |
           git fetch
           echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e env.BRANCH_JAVADOC)" 
