@@ -2,7 +2,7 @@ name: plusActionTest
 on: workflow_dispatch
 
 jobs:
-   javadoc create:
+   create_javadoc:
       runs-on: ubuntu-latest
       
       env:
