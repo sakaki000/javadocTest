@@ -6,7 +6,7 @@ jobs:
    build:
       runs-on: ubuntu-latest      
       steps:
-      # mainブランチのソースをチェックアウト
+      # mainブランチをチェックアウト
       - uses: actions/checkout@v2
         with:
           ref: 'main'
@@ -17,14 +17,14 @@ jobs:
           git fetch
           echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e javadocOnly)" 
 
+      # git configの設定
+      - uses: fregante/setup-git-user@v1
+      
       # javadoc専用ブランチがあればmasterのソースに更新
       - name: Check javadoc branch exist
         if: (steps.check.outputs.branch == 'origin/javadocOnly')
         run: |
-          #config設定
-          git config --global user.email "workflow@example.com"
-          git config --global user.name "workflow user"
-          # 開発用ブランチへ移動
+          #javadoc専用ブランチをチェックアウト
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む(masterの変更優先)
           git merge --allow-unrelated-histories -Xtheirs origin/main
