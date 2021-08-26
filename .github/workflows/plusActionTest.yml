@@ -27,7 +27,7 @@ jobs:
       
       # javadoc専用ブランチがあればmasterのソースに更新
       - name: Merge branch
-        if: (steps.check.outputs.branch == ${{'origin/'}}${{env.BRANCH_JAVADOC}})
+        if: (steps.check.outputs.branch == 'origin/${{env.BRANCH_JAVADOC}}')
         run: |
           #javadoc専用ブランチをチェックアウト
           git checkout ${{env.BRANCH_JAVADOC}}
@@ -38,7 +38,7 @@ jobs:
 
       # javadoc専用ブランチがなければmasterのソースをもとに作成
       - name: Create branch
-        if: "!(steps.check.outputs.branch == ${{'origin/'}}${{env.BRANCH_JAVADOC}})"
+        if: "!(steps.check.outputs.branch == 'origin/${{env.BRANCH_JAVADOC}}')"
         run: |
           # javadoc専用ブランチを作成
           git checkout -b ${{env.BRANCH_JAVADOC}} ${{env.BRANCH_MASTER}}
