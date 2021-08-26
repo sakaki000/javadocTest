@@ -44,6 +44,7 @@ jobs:
         if: "!(steps.check.outputs.branch == 'origin/javadocOnly')"
         run: |
           mkdir -p ./docs
+          touch ./docs/readme.txt
           git add .
           git commit -m "create docs directory"
           git push origin javadocOnly
