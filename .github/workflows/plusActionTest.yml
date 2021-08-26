@@ -40,6 +40,9 @@ jobs:
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
           
+      - name: Check javadoc branch not exist
+        if: "!(steps.check.outputs.branch == 'origin/javadocOnly')"
+        run: |
           mkdir -p ./docs
           git add .
           git commit -m "create docs directory"
