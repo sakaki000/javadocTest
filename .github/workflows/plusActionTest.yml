@@ -40,12 +40,12 @@ jobs:
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
           
+          # docsディレクトリを作成
           mkdir -p ./docs
-          touch ./docs/readme.txt
           git add -A
-          git commit -m "docsディレクトリ作成"
+          git commit -m "create docs directory"
           git push origin javadocOnly
-
+          git fetch
 
       # JDKの設定
       - name: Set up JDK 1.8
@@ -66,13 +66,9 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Cleanup
         run: |
+          mkdir -p ./docs
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
-          
-      # 変更のコミット
-      - name: Update javadoc
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update javadoc
-          add_options: '-u'
-          repository: ./docs/
+          git add -A
+          git commit -m "create docs directory"
+          git push origin javadocOnly
