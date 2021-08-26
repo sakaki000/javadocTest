@@ -37,8 +37,6 @@ jobs:
         run: |
           # javadoc専用ブランチを作成
           git checkout -b javadocOnly main
-          # docsディレクトリ作成
-          mkdir ./docs
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
 
@@ -58,9 +56,10 @@ jobs:
          ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
          cd build/docs/javadoc/
          
-      # docsフォルダの入れ替え
+      # docsフォルダの内容入れ替え
       - name: Cleanup
         run: |
+          mkdir -p ./docs
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
           
