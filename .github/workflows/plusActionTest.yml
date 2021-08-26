@@ -41,7 +41,7 @@ jobs:
           git push origin javadocOnly
           
           mkdir -p ./docs
-          git add -A
+          git add .
           git commit -m "create docs directory"
           git push origin javadocOnly
 
@@ -64,9 +64,8 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Cleanup
         run: |
-          mkdir -p ./docs
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
-          git add -A
+          git add ./docs/*
           git commit -m "create docs directory"
           git push origin javadocOnly
