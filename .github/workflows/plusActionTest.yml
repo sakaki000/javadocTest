@@ -72,8 +72,7 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          echo diff -rq build/docs/javadoc/ ./docs/ | wc -l > 0
-          if diff -rq build/docs/javadoc/ ./docs/ | wc -l > 0 then
+          if [ diff -rq build/docs/javadoc/ ./docs/ | wc -l > 0 ]; then
             rm -rf ./docs/*
             cp -r build/docs/javadoc/* ./docs/
             git add ./docs/*
