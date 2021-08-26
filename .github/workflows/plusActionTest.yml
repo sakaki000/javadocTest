@@ -76,5 +76,8 @@ jobs:
           rm -rf ./docs/*
           cp -r build/docs/javadoc/* ./docs/
           git add ./docs/*
-          git commit -m "update javadoc"
-          git push origin ${{env.BRANCH_JAVADOC}}
+          if ! git diff --exit-code --quiet
+          then
+            git commit -m "update javadoc"
+            git push origin ${{env.BRANCH_JAVADOC}}
+          fi
