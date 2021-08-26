@@ -30,7 +30,7 @@ jobs:
           # 開発用ブランチへ移動
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む
-          git merge -Xtheirs origin/main
+          git merge --allow-unrelated-histories -Xtheirs origin/main
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
 
