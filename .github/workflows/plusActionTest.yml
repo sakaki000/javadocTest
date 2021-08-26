@@ -73,11 +73,11 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          rm -rf ./docs/*
-          cp -r build/docs/javadoc/* ./docs/
-          git add ./docs/*
-          if ! git diff --exit-code --quiet
+          if diff -r build/docs/javadoc/ ./docs/
           then
+            rm -rf ./docs/*
+            cp -r build/docs/javadoc/* ./docs/
+            git add ./docs/*
             git commit -m "update javadoc"
             git push origin ${{env.BRANCH_JAVADOC}}
           fi
