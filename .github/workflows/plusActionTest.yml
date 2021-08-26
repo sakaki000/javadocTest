@@ -21,6 +21,9 @@ jobs:
       - name: Check javadoc branch exist
         if: (steps.check.outputs.branch == 'origin/javadocOnly')
         run: |
+          #config設定
+          git config --global user.email "workflow@example.com"
+          git config --global user.name "workflow user"
           # 開発用ブランチへ移動
           git checkout javadocOnly
           # mergeコマンドでmaserの内容を取り込む(masterの変更優先)
