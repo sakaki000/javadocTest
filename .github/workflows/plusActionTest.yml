@@ -37,10 +37,13 @@ jobs:
         run: |
           # javadoc専用ブランチを作成
           git checkout -b javadocOnly main
-          mkdir -p ./docs
-          touch ./docs/readme.txt
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin javadocOnly
+          
+          mkdir -p ./docs
+          touch ./docs/readme.txt
+          git push origin javadocOnly
+
 
       # JDKの設定
       - name: Set up JDK 1.8
