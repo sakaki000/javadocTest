@@ -7,8 +7,8 @@ public class exclude {
 
 
     /***
-     * @param in mainBranchSource_change
-     * @param out outputoutput
+     * @param in input
+     * @param out output
      * @return String String
      */
     public String get(String in, String out) {
