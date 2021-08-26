@@ -27,18 +27,18 @@ jobs:
       
       # javadoc専用ブランチがあればmasterのソースに更新
       - name: Merge branch
-        if: (steps.check.outputs.branch == ${{origin/}}${{BRANCH_JAVADOC}})
+        if: (steps.check.outputs.branch == ${{'origin/'}}${{BRANCH_JAVADOC}})
         run: |
           #javadoc専用ブランチをチェックアウト
           git checkout $BRANCH_JAVADOC
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
-          git merge --allow-unrelated-histories -Xtheirs ${{origin/}}${{BRANCH_MASTER}}
+          git merge --allow-unrelated-histories -Xtheirs ${{'origin/'}}${{BRANCH_MASTER}}
           # mainブランチのソースをjavadoc専用ブランチにpush
           git push origin $BRANCH_JAVADOC
 
       # javadoc専用ブランチがなければmasterのソースをもとに作成
       - name: Create branch
-        if: "!(steps.check.outputs.branch == ${{origin/}}${{BRANCH_JAVADOC}})"
+        if: "!(steps.check.outputs.branch == ${{'origin/'}}${{BRANCH_JAVADOC}})"
         run: |
           # javadoc専用ブランチを作成
           git checkout -b $BRANCH_JAVADOC $BRANCH_MASTER
