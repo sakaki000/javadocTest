@@ -21,14 +21,10 @@ jobs:
       - name: Check javadoc branch exist
         if: (steps.check.outputs.branch == 'origin/javadocOnly')
         run: |
-          #git config --global user.email "terawaki.t.saze@gmail.com"
-          #git config --global user.name "sakaki000"
           # 開発用ブランチへ移動
           git checkout javadocOnly
-          # mergeコマンドでmaserの内容を取り込む
+          # mergeコマンドでmaserの内容を取り込む(masterの変更優先)
           git merge --allow-unrelated-histories -Xtheirs origin/main
-          # mainブランチのソースをjavadoc専用ブランチにpush
-          git push origin javadocOnly
 
       # javadoc専用ブランチがなければmasterのソースをもとに作成
       - name: Check javadoc branch not exist
