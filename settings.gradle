@@ -1,4 +1,3 @@
 rootProject.name = 'javadocTest'
 
 include 'first'
-include 'second'
