@@ -7,7 +7,7 @@ public class exclude {
 
 
     /***
-     * @param in javadocCheckNotAct
+     * @param in plus_main
      * @param out output
      * @return String String
      */
