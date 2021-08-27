@@ -1,30 +1,26 @@
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
+    }
+}
 plugins {
-	id 'org.springframework.boot' version '2.4.2'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id "io.freefair.lombok" version "4.1.6"
 }
+apply plugin: 'nebula-aggregate-javadocs'
+subprojects {
+    repositories {
+        mavenCentral()
+    }
 
-repositories {
-	maven {
-		url 'https://plugins.gradle.org/m2/'
-	}
-}
+    apply plugin: 'java'
+    apply plugin: 'io.freefair.lombok'
 
-dependencies {
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-	compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-}
-
-
-def exportedProjects = [
-        ":first",
-        ":second"
-]
-
-tasks.withType(Javadoc) {
-      description = 'Generates a global javadoc from all the modules'
-      source exportedProjects.collect { project(it).sourceSets.main.allJava }    											  
-      classpath = files(exportedProjects.collect { project(it).sourceSets.main.compileClasspath })
-      destinationDir = file("build/docs/javadoc")
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 }
