@@ -76,7 +76,6 @@ jobs:
             git add ./docs/*
             git commit -m "update javadoc"
           fi
-          git add .
           git push origin ${{env.BRANCH_JAVADOC}}
 
       - name: Setup tmate session
