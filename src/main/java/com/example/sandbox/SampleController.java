@@ -9,7 +9,7 @@ public class SampleController {
     /***
      * @param in main_mirror
      * @param out main_mirror 
-     * @return String String
+     * @return String main_mirror
      */
     public String get(String in, String out) {
         return "Hello";
