@@ -1,10 +1,10 @@
 name: Javadoc Check
-on:
-  push:
-    branches: [ plus** ]
-    paths: 
-    - 'first/src/**'
-    - 'second/src/**'
+on: workflow_dispatch
+#  push:
+#    branches: [ plus** ]
+#    paths: 
+#    - 'first/src/**'
+#    - 'second/src/**'
 
 jobs:
   javadoc_generate:
@@ -27,4 +27,4 @@ jobs:
       # Javadoc生成
       - name: Build javadoc
         run: |
-          ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
+          echo `! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?`
