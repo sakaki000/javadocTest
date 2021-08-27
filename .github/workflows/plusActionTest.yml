@@ -15,7 +15,7 @@ jobs:
       # mainブランチをチェックアウト
       - uses: actions/checkout@v2
         with:
-          ref: 'main'
+          ref: env.BRANCH_MASTER
           
       # javadoc専用ブランチの存在確認
       - name: check javadoc branch exist
