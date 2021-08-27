@@ -70,7 +70,7 @@ jobs:
           # docsフォルダ作成
           mkdir -p ./docs
           
-          COUNT=$(diff -r -q  build/docs/javadoc/ ./docs/ | wc -l)
+          COUNT=$(diff -r -q  first/build/docs/javadoc/ ./docs/ | wc -l)
           # 変更が1件以上あればdocsフォルダの中身を入れ替える
           if [ $COUNT -gt 0 ]; then
             rm -rf ./docs/*
