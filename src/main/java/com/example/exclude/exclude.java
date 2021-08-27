@@ -7,9 +7,9 @@ public class exclude {
 
 
     /***
-     * @param in plusActionTest
-     * @param out plusActionTest
-     * @return String plusActionTest
+     * @param in javadocCheckAct
+     * @param out javadocCheckAct
+     * @return String javadocCheckAct
      */
     public String get(String in, String out) {
         return "Hello";
