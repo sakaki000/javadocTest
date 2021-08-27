@@ -23,3 +23,13 @@ tasks.withType(Javadoc) {
       // 対象ディレクトリの指定
       include 'first'
 }
+
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
+    }
+}
+
+apply plugin: 'nebula-aggregate-javadocs'
