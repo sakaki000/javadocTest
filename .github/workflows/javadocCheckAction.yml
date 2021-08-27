@@ -3,7 +3,7 @@ on:
   push:
     branches: [ plus** ]
     paths: 
-    - 'src'
+    - 'src/**'
 
 jobs:
   javadoc_generate:
