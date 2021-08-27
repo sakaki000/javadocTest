@@ -16,9 +16,9 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
-def exportedProjects= [
-        "first",
-	"secound"
+exportedProjects= [
+        ":first",
+	":secound"
 ]
 
 tasks.withType(Javadoc) {
