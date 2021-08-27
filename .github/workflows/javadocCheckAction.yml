@@ -24,12 +24,11 @@ jobs:
       #- name: Grant execute permission for gradlew
       #  run: chmod +x gradlew
 
-      # Javadoc生成
-      - name: Build javadoc
-        run: |
-          #gradle javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
-          gradle javadoc
-        working-directory: first
-
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
+
+      # Javadoc生成
+      #- name: Build javadoc
+      #  run: |
+      #    gradle javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
+
