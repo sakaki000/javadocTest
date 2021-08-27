@@ -13,6 +13,8 @@ jobs:
     steps:
       # masterブランチをチェックアウト
       - uses: actions/checkout@v2
+        with:
+          path: first
 
       # JDKの設定
       - name: Set up JDK 1.8
