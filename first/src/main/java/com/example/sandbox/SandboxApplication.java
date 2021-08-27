@@ -10,5 +10,12 @@ public class SandboxApplication {
 		System.out.println("a");
 		SpringApplication.run(SandboxApplication.class, args);
 	}
-
+	
+	/**
+	*  コメントの説明文
+	*  @deprecated 別のメソッドに置き換えられました
+	*/
+	public String out() {
+		return "dep";
+	}
 }
