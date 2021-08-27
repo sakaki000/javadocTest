@@ -9,7 +9,7 @@ public class exclude {
     /***
      * @param in plusActionTest
      * @param out plusActionTest
-     * @return String String
+     * @return String plusActionTest
      */
     public String get(String in, String out) {
         return "Hello";
