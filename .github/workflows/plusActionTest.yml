@@ -62,6 +62,8 @@ jobs:
       - name: Build javadoc
         run: |
           ! ./gradlew javadoc 2>&1 | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error: ; exit $?
+          cd build/docs/javadoc/
+          
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
