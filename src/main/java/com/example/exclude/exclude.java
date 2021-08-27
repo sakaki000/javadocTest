@@ -8,7 +8,7 @@ public class exclude {
 
     /***
      * @param in main_mirror
-     * @param out output
+     * @param out main_mirror
      * @return String String
      */
     public String get(String in, String out) {
