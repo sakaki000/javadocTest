@@ -74,7 +74,7 @@ jobs:
           # 変更が1件以上あればdocsフォルダの中身を入れ替える
           if [ $COUNT -gt 0 ]; then
             rm -rf ./docs/*
-            cp -r build/docs/javadoc/* ./docs/
+            cp -r first/build/docs/javadoc/* ./docs/
             git add ./docs/*
             git commit -m "update javadoc"
           fi
