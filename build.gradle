@@ -18,8 +18,8 @@ dependencies {
 
 
 def exportedProjects = [
-        ":calculator-shared",
-        ":calculator-cli"
+        ":first",
+        ":second"
 ]
 
 tasks.withType(Javadoc) {
