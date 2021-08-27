@@ -8,7 +8,8 @@ public class SampleController {
 
     /***
      * @param in main_copy
-     * @param j iii 
+     * @param out out 
+     * @return String
      */
     public String get(String in, String out) {
         return "Hello";
