@@ -1,8 +1,9 @@
 name: Javadoc Check
-on: workflow_dispatch
-#  pull_request:
-#    branches: [ master ]
-#    type: [closed]
+on:
+  push:
+    branches: [ plus** ]
+    paths: 
+    - 'src/**'
 
 jobs:
   javadoc_generate:
