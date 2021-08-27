@@ -78,3 +78,6 @@ jobs:
           fi
           git add .
           git push origin ${{env.BRANCH_JAVADOC}}
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
