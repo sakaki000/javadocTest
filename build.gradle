@@ -17,8 +17,7 @@ dependencies {
 }
 
 def exportedProjects = [
-        ":first",
-	":secound"
+        ":first"
 ]
 
 tasks.withType(Javadoc) {
