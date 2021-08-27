@@ -24,6 +24,5 @@ tasks.withType(Javadoc) {
       description = 'Generates a global javadoc from all the modules'
       source exportedProjects.collect { project(it).sourceSets.main.allJava }    											  
       classpath = files(exportedProjects.collect { project(it).sourceSets.main.compileClasspath })
-      options.memberLevel = JavadocMemberLevel.PRIVATE
       destinationDir = file("${buildDir}/docs/javadoc")
 }
