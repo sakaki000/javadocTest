@@ -14,6 +14,7 @@ public class SandboxApplication {
 	/**
 	*  コメントの説明文
 	*  @deprecated 別のメソッドに置き換えられました
+        *  @return String String
 	*/
 	public String out() {
 		return "dep";
