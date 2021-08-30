@@ -11,4 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Value
-        run: echo ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          token=${{ secrets.GITHUB_TOKEN }}
+          echo $test
