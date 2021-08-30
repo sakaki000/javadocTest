@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Value
-        run: echo "Javadoc Check"
+        run: echo ${{ secrets.GITHUB_TOKEN }}
