@@ -11,9 +11,9 @@ jobs:
 
       # JDKの設定
       - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
-          java-version: 1.8
+          java-version: '11'
 
       # Gradleへの権限付与
       - name: Grant execute permission for gradlew
