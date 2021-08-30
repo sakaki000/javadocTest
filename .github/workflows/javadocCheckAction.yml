@@ -1,7 +1,7 @@
 name: Javadoc Check
 on:
   push:
-    branches: [ plus** ]
+    branches: [ main_** ]
     paths: 
     - 'first/src/**'
     - 'second/src/**'
