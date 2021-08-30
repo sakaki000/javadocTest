@@ -1,10 +1,10 @@
 name: Javadoc Check
-on: workflow_dispatch
-#  push:
-#    branches: [ plus** ]
-#    paths: 
-#    - 'first/src/**'
-#    - 'second/src/**'
+on:
+  push:
+    branches: [ plus** ]
+    paths: 
+    - 'first/src/**'
+    - 'second/src/**'
 
 jobs:
   javadoc_generate:
