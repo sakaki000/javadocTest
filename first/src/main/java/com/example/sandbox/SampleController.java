@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in input
-     * @param out output
-     * @return String String
+     * @param in main_copy3
+     * @param out main_copy3
+     * @return String main_copy3
      */
     public String get(String in, String out) {
         return "Hello";
@@ -19,7 +19,7 @@ public class SampleController {
     /**
     *  コメントの説明文
     *  @deprecated 別のメソッドに置き換えられました
-    *  @return String String
+    *  @return String main_copy3
     */
     public String out() {
         return "dep";
