@@ -25,11 +25,13 @@ subprojects {
             url 'https://plugins.gradle.org/m2/'
         }
     }
+    
     dependencies {
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
         compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
     }
+    
     tasks.withType(Javadoc) {
       // javadoc生成中にエラーが発生した時にタスクを失敗させるかどうか
       failOnError false
