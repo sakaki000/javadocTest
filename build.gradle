@@ -16,3 +16,5 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
+apply from: gradle/subproject.gradle
+apply from: gradle/javadoc-tasks.gradle
