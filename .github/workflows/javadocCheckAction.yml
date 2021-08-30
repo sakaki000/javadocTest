@@ -31,3 +31,6 @@ jobs:
            else
              exit 0
            fi
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
