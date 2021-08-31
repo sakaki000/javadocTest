@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Echo Value
         run: |
-          token=${{ GITHUB_ACTOR }}
+          token=${ GITHUB_ACTOR }
           echo $test
