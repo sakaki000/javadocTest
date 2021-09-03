@@ -1,0 +1,17 @@
+name: Javadoc Check
+on: 
+  pull_request:
+    types: opened
+    branches-ignore:
+      - 'plusActionTest'
+    paths-ignore:
+      - 'first/**'
+
+jobs:
+  javadoc_generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo Value
+        run: |
+          echo "Javadoc Not Check"
