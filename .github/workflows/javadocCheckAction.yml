@@ -1,9 +1,9 @@
 name: Javadoc Check
 on: 
   push:
-    branches:
-      - '!main'
-      - '!plusActionTest'
+    branches-ignore:
+      - 'main'
+      - 'plusActionTest'
 
 jobs:
   javadoc_generate:
