@@ -7,9 +7,9 @@ public class Exclude {
 
 
     /***
-     * @param in PR2
-     * @param out PR2
-     * @return String PR2
+     * @param in NotWork
+     * @param out NotWork
+     * @return String NotWork
      */
     public String get(String in, String out) {
         return "Hello";
@@ -19,7 +19,7 @@ public class Exclude {
     /**
     *  コメントの説明文
     *  @deprecated 別のメソッドに置き換えられました
-    *  @return String main_copy2
+    *  @return String NotWork
     */
     public String out() {
         return "dep";
