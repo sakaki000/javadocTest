@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in PR_TEST3
-     * @param out PR_TEST3
-     * @return String PR_TEST3
+     * @param in PR2
+     * @param out PR2
+     * @return String PR2
      */
     public String get(String in, String out) {
         return "Hello";
