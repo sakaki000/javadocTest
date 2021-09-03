@@ -1,5 +1,9 @@
 name: Javadoc Check
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - '!main'
+      - '!plusActionTest'
 
 jobs:
   javadoc_generate:
