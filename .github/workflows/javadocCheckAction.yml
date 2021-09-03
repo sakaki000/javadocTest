@@ -1,8 +1,8 @@
 name: Javadoc Check
 on: 
   pull_request:
+    types: opened
     branches-ignore:
-      - 'main'
       - 'plusActionTest'
 
 jobs:
