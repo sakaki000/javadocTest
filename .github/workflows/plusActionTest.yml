@@ -1,14 +1,92 @@
-name: Javadoc Generate
+name: Javadoc Genarate
 on: workflow_dispatch
-#  push:
-#    branches: [ main_** ]
-#    paths: 
-#    - 'first/src/**'
-#    - 'second/src/**'
 
 jobs:
-  build:
+  javadoc_generate:
     runs-on: ubuntu-latest
+
+    env:
+      # javadoc用ブランチ名
+      BRANCH_JAVADOC: javadocOnly
+      BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
+      # masterブランチ名
+      BRANCH_MASTER: main
+      BRANCH_MASTER_ORIGIN: origin/main
+
     steps:
-      - name: Echo Value
-        run: echo "Javadoc Generate"
+      # masterブランチをチェックアウト
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_MASTER}}
+
+      # javadoc専用ブランチの存在確認
+      - name: Check javadoc branch exist
+        id: check
+        run: |
+          git fetch
+          echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e ${{env.BRANCH_JAVADOC}})"
+      # git configの設定
+      - uses: fregante/setup-git-user@v1
+
+      # javadoc専用ブランチがなければmasterブランチのソースをもとに作成
+      - name: Create branch
+        if: steps.check.outputs.branch != env.BRANCH_JAVADOC_ORIGIN
+        run: |
+          # javadoc専用ブランチを作成
+          git checkout -b ${{env.BRANCH_JAVADOC}} ${{env.BRANCH_MASTER}}
+          
+      # javadoc専用ブランチがあればmasterブランチのソースに更新
+      - name: Merge branch
+        if: steps.check.outputs.branch == env.BRANCH_JAVADOC_ORIGIN
+        run: |
+          # javadoc専用ブランチをチェックアウト
+          git checkout ${{env.BRANCH_JAVADOC}}
+          # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
+          git merge --allow-unrelated-histories -Xtheirs ${{env.BRANCH_MASTER_ORIGIN}}
+
+      # JDKの設定
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      # Gradleへの権限付与
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      # Javadoc生成
+      - name: Build javadoc
+        run: |
+           ! ./gradlew :first:javadoc | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error:
+           build1=$?
+           ! ./gradlew :second:javadoc | grep -v 'warning: \\[deprecation\\]' | grep -A 2 -e warning: -e error:
+           build2=$?
+           if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
+             exit 1
+           else
+             exit 0
+           fi
+          
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        
+      # docsフォルダの内容入れ替え
+      - name: Update javadoc
+        run: |
+          # docsフォルダ作成
+          mkdir -p ./docs/first
+          mkdir -p ./docs/second
+          
+          COUNT=$(diff -r -q  first/build/docs/javadoc/ ./docs/first/ | wc -l)
+          COUNT+=$(diff -r -q  second/build/docs/javadoc/ ./docs/second/ | wc -l)
+
+          # 変更が1件以上あればdocsフォルダの中身を入れ替える
+          if [ $COUNT -gt 0 ]; then
+            rm -rf ./docs/first/*
+            rm -rf ./docs/second/*
+            cp -r first/build/docs/javadoc/* ./docs/first/
+            cp -r second/build/docs/javadoc/* ./docs/second/
+            git add ./docs/*
+            git commit -m "Update javadoc"
+          fi
+          git push origin ${{env.BRANCH_JAVADOC}}

@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in workflow_test
-     * @param out workflow_test
-     * @return String workflow_test
+     * @param in main
+     * @param out main
+     * @return String main
      */
     public String get(String in, String out) {
         return "Hello";
