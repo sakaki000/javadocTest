@@ -1,4 +1,4 @@
-name: Javadoc Check
+name: Javadoc Not Check
 on: 
   pull_request:
     types: opened
