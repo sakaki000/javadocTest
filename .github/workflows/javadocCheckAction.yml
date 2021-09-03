@@ -4,6 +4,8 @@ on:
     types: opened
     branches-ignore:
       - 'plusActionTest'
+    paths:
+      - 'first/**'
 
 jobs:
   javadoc_generate:
