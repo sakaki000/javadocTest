@@ -8,8 +8,8 @@ public class SampleController {
 
     /***
      * @param in not_merge
-     * @param out Work
-     * @return String Work
+     * @param out not_merge
+     * @return String not_merge
      */
     public String get(String in, String out) {
         return "Hello";
