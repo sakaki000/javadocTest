@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in main
-     * @param out main
-     * @return String main
+     * @param in not_merge
+     * @param out not_merge
+     * @return String not_merge
      */
     public String get(String in, String out) {
         return "Hello";

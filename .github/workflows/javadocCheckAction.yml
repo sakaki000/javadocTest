@@ -1,9 +1,10 @@
 name: Javadoc Check
 on: 
-  push:
+  pull_request:
     branches-ignore:
-      - 'main'
       - 'plusActionTest'
+    paths:
+      - 'first/**'
 
 jobs:
   javadoc_generate:
