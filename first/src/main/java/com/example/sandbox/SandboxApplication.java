@@ -13,6 +13,7 @@ public class SandboxApplication {
 	
 	/**
 	*  コメントの説明文
+	* @return String topic_staging2_update_push
 	*/
 	public String out() {
 		return "dep";
