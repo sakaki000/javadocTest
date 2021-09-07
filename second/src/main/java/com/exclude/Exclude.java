@@ -18,6 +18,7 @@ public class Exclude {
 
     /**
     *  コメントの説明文
+    * @return String topic2_update
     */
     public String out() {
         return "dep";
