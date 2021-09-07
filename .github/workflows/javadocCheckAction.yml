@@ -9,7 +9,7 @@ on:
       - 'second/**'
 
 jobs:
-  javadoc_generate:
+  javadoc_check:
     runs-on: ubuntu-latest
 
     steps:
