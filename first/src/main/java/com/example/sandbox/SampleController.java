@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in not_merge
-     * @param out not_merge
-     * @return String not_merge
+     * @param in topic1
+     * @param out topic1
+     * @return String topic1
      */
     public String get(String in, String out) {
         return "Hello";
@@ -18,7 +18,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
-    *  @return String workflow_test
+    *  @return String topic1
     */
     public String out() {
         return "dep";
