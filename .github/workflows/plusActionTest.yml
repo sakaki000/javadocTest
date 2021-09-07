@@ -1,5 +1,8 @@
 name: Javadoc Genarate
-on: workflow_dispatch
+on: 
+  pull_request:
+    branches: [ master ]
+    types: [ closed ]
 
 jobs:
   javadoc_generate:
@@ -10,8 +13,8 @@ jobs:
       BRANCH_JAVADOC: javadocOnly
       BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
       # masterブランチ名
-      BRANCH_MASTER: main
-      BRANCH_MASTER_ORIGIN: origin/main
+      BRANCH_MASTER: master
+      BRANCH_MASTER_ORIGIN: origin/master
 
     steps:
       # masterブランチをチェックアウト
