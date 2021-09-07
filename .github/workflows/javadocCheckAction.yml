@@ -1,7 +1,6 @@
 name: Javadoc Check
 on: 
   pull_request:
-    types: opened
     branches-ignore:
       - 'plusActionTest'
     paths:
