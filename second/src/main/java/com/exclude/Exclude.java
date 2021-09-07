@@ -9,7 +9,6 @@ public class Exclude {
     /***
      * @param in NotWork_pr
      * @param out NotWork
-     * @return String NotWork
      */
     public String get(String in, String out) {
         return "Hello";
