@@ -7,9 +7,9 @@ public class Exclude {
 
 
     /***
-     * @param in topic_staging1
-     * @param out topic_staging1
-     * @return String topic_staging1
+     * @param in master
+     * @param out master
+     * @return String master
      */
     public String get(String in, String out) {
         return "Hello";
@@ -18,7 +18,7 @@ public class Exclude {
 
     /**
     *  コメントの説明文
-    * @return String topic_staging1
+    * @return String master
     */
     public String out() {
         return "dep";
