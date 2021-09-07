@@ -18,7 +18,6 @@ public class Exclude {
 
     /**
     *  コメントの説明文
-    *  @deprecated 別のメソッドに置き換えられました
     *  @return String main_copy2
     */
     public String out() {
