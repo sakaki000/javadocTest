@@ -8,7 +8,6 @@ public class Exclude {
 
     /***
      * @param in main_copy2
-     * @return String main_copy2
      */
     public String get(String in, String out) {
         return "Hello";
