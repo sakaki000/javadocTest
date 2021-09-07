@@ -1,8 +1,9 @@
 name: Javadoc Check
 on: 
   pull_request:
-    branches-ignore:
-      - 'plusActionTest'
+    branches:
+      - 'staging'
+      - 'develop'
     paths:
       - 'first/**'
 
