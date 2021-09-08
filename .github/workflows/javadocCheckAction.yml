@@ -5,8 +5,8 @@ on:
       - 'staging'
       - 'develop'
     paths:
-      - 'first/**'
-      - 'second/**'
+      - 'first/src/**'
+      - 'second/src/**'
 
 jobs:
   javadoc_check:
