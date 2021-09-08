@@ -8,7 +8,6 @@ public class SampleController {
 
     /***
      * @param in topic4
-     * @param out topic4
      * @return String topic4
      */
     public String get(String in, String out) {
