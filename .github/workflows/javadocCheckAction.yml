@@ -1,12 +1,9 @@
 name: Javadoc Check
 on: 
   pull_request:
-    branches:
-      - 'staging'
-      - 'develop'
     paths:
-      - 'first/**'
-      - 'second/**'
+      - 'first/src/**'
+      - 'second/src/**'
 
 jobs:
   javadoc_check:
