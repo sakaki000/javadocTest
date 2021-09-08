@@ -1,9 +1,6 @@
 name: Javadoc Check
 on: 
   pull_request:
-    branches:
-      - 'staging'
-      - 'develop'
     paths:
       - 'first/src/**'
       - 'second/src/**'
