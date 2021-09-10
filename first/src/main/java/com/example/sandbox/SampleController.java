@@ -19,7 +19,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
-    *  @return String topic1
+    *  @return String topic4
     */
     public String out() {
         return "dep";

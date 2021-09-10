@@ -13,7 +13,7 @@ public class SandboxApplication {
 	
 	/**
 	*  コメントの説明文
-        *  @return String String
+        *  @return String topic4
 	*/
 	public String out() {
 		return "dep";
