@@ -10,7 +10,7 @@ public class SampleController {
      * @param in topic1
      * @param out topic1
      * @return String topic1
-     * @throws RuntimeException
+     * @throws OverMaxPageException 最終ページ数後ろのページ数にしおりを挟もうとした
      */
     public String get(String in, String out) {
         return "Hello";
