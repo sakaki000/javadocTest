@@ -10,6 +10,7 @@ public class SampleController {
      * @param in topic1
      * @param out topic1
      * @return String topic1
+     * @throws RuntimeException
      */
     public String get(String in, String out) {
         return "Hello";
