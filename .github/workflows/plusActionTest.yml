@@ -1,8 +1,5 @@
 name: Javadoc Genarate
-on: 
-  pull_request:
-    branches: [ master ]
-    types: [ closed ]
+on: workflow_dispatch
 
 jobs:
   javadoc_generate:
