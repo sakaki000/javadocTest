@@ -4,27 +4,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Exclude {
+  private final String name;
+  public Exclude(String name) {
+    this.name = name;
+    new GrowthList();
+  }
 
-
-    /***
-     * @param in staging4
-     * @param out staging4
-     * @return String staging4
-     */
-    public String get(String in, String out) {
-        return "Hello";
+  public String getName() {
+    String hoge = name;
+    if(hoge.equals("A") || hoge.equals("B")) {
+        System.out.println("処理a");
+    } else {
+        System.out.println("処理b");
     }
 
-
-    /**
-    *  コメントの説明文
-    * @return String staging4
-    */
-    public String out() {
-        return "dep";
+    if(hoge.equals("C")) {
+        System.out.println("処理c");
     }
-
-    public String useDep() {
-        return out();
-    }
+    return name;
+  }
 }
