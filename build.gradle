@@ -18,12 +18,20 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-jacocoTestReport {
-  reports {
-    xml.enabled false
-    csv.enabled false
-    html.enabled = true
-  }
+task testReport(type: TestReport) {
+    reportOn subprojects.tasks.test.binResultsDir
+    destinationDir file("$buildDir/reports/tests/test")
+}
+
+task jacocoMerge(type: JacocoMerge) {
+    executionData project(':first').tasks.test.jacoco.destinationFile
+}
+
+task jacocoReport(type: JacocoReport) {
+    dependsOn jacocoMerge
+
+    executionData jacocoMerge.destinationFile
+    sourceSets *subprojects.sourceSets.main
 }
 
 apply from: 'gradle/subproject.gradle'
