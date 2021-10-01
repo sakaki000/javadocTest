@@ -17,7 +17,9 @@ jobs:
         run: chmod +x gradlew
         
       - name: Build with Gradle
-        run: ./gradlew check testReport jacocoReport
+        run: |
+          ./gradlew :first:test 
+          ./gradlew :first:jacocoTestReport
 
       - name: Archive unit test results
         uses: actions/upload-artifact@v2
