@@ -23,7 +23,7 @@ subprojects {
         applyTo bootRun
     }
 
-    task jacocoRunReport(type:JacocoReport, dependsOn:bootRun) {
+    task jacocoRunReport(type:JacocoReport, dependsOn:"test") {
         executionData bootRun
         sourceSets sourceSets.main
     }
