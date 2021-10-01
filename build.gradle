@@ -18,16 +18,5 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-subprojects {
-    jacoco {
-        applyTo bootRun
-    }
-
-    task jacocoRunReport(type:JacocoReport, dependsOn:"test") {
-        executionData bootRun
-        sourceSets sourceSets.main
-    }
-}
-
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
