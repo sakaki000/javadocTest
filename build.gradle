@@ -18,5 +18,17 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
+jacoco {
+    applyTo run
+}
+
+task jacocoRunReport(type:JacocoReport, dependsOn:run) {
+    executionData run
+    sourceSets sourceSets.main
+    reports {
+        html.destination "${jacoco.reportsDir}/run/html"
+    }
+}
+
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
