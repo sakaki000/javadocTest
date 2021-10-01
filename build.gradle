@@ -23,7 +23,7 @@ jacoco {
 }
 
 task jacocoRunReport(type:JacocoReport, dependsOn:run) {
-    executionData run
+    executionData bootRun
     sourceSets sourceSets.main
     reports {
         html.destination "${jacoco.reportsDir}/run/html"
