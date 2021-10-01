@@ -17,11 +17,5 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
-junitPlatformTest {
-  jacoco {
-    destinationFile = file("${buildDir}/jacoco/test.exec")
-  }
-}
-
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
