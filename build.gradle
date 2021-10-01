@@ -27,7 +27,7 @@ subprojects {
         executionData bootRun
         sourceSets sourceSets.main
         reports {
-            html.destination "${jacoco.reportsDir}/run/html"
+            html.destination "build/reports/jacoco/test/html"
         }
     }
 }
