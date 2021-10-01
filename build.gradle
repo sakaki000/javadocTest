@@ -15,18 +15,10 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-jacocoTestReport {
-    group = "Reporting"
-    description = "Generate Jacoco coverage reports after running tests."
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination "${buildDir}/reports/jacoco"
-        sourceSets sourceSets.main
-    }
-}
+
 
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
