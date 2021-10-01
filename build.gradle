@@ -26,9 +26,6 @@ subprojects {
     task jacocoRunReport(type:JacocoReport, dependsOn:bootRun) {
         executionData bootRun
         sourceSets sourceSets.main
-        reports {
-            html.destination "build/reports/jacoco/test/html"
-        }
     }
 }
 
