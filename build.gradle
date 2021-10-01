@@ -17,5 +17,18 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
+// jacocoTestReportタスク。前述の「jacocoのレポートから除外するクラスファイル」の設定を組み込んだタスクにしています。
+jacocoTestReport {
+    reports {
+        html.enabled = true
+    }
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(
+                    dir: it)
+        })
+    }
+}
+
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
