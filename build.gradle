@@ -18,15 +18,17 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-jacoco {
-    applyTo bootRun
-}
+subprojects {
+    jacoco {
+        applyTo bootRun
+    }
 
-task jacocoRunReport(type:JacocoReport, dependsOn:run) {
-    executionData bootRun
-    sourceSets sourceSets.main
-    reports {
-        html.destination "${jacoco.reportsDir}/run/html"
+    task jacocoRunReport(type:JacocoReport, dependsOn:run) {
+        executionData bootRun
+        sourceSets sourceSets.main
+        reports {
+            html.destination "${jacoco.reportsDir}/run/html"
+        }
     }
 }
 
