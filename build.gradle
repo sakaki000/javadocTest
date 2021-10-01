@@ -19,7 +19,7 @@ dependencies {
 }
 
 jacoco {
-    applyTo run
+    applyTo bootRun
 }
 
 task jacocoRunReport(type:JacocoReport, dependsOn:run) {
