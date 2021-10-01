@@ -1,39 +1,21 @@
-subprojects {
-    plugins {
-        id 'org.springframework.boot' version '2.4.2'
-        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-        id 'java'
-        id 'jacoco'
-    }
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'jacoco'
+}
 
-    repositories {
-        maven {
-            url 'https://plugins.gradle.org/m2/'
-        }
-    }
-
-    dependencies {
-        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-        compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
-        compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-        testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
+repositories {
+    maven {
+        url 'https://plugins.gradle.org/m2/'
     }
 }
 
-task testReport(type: TestReport) {
-    reportOn subprojects.tasks.test.binResultsDir
-    destinationDir file("$buildDir/reports/tests/test")
-}
-
-task jacocoMerge(type: JacocoMerge) {
-    executionData project(':first').tasks.test.jacoco.destinationFile
-}
-
-task jacocoReport(type: JacocoReport) {
-    dependsOn jacocoMerge
-
-    executionData jacocoMerge.destinationFile
-    sourceSets *subprojects.sourceSets.main
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
 apply from: 'gradle/subproject.gradle'
