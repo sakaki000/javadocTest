@@ -19,7 +19,7 @@ dependencies {
 }
 
 task testReport(type: TestReport) {
-    reportOn subprojects.tasks.test.binResultsDir
+    reportOn tasks.test.binResultsDir
     destinationDir file("$buildDir/reports/tests/test")
 }
 
