@@ -18,7 +18,13 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-
+jacocoTestReport {
+  reports {
+    xml.enabled false
+    csv.enabled false
+    html.enabled = true
+  }
+}
 
 apply from: 'gradle/subproject.gradle'
 apply from: 'gradle/javadoc-tasks.gradle'
