@@ -18,19 +18,20 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
+subprojects {
+    tasks.withType(TestReport) {
+        reportOn subprojects.tasks.test.binResultsDir
+        destinationDir file("$buildDir/reports/tests/test")
+    }
 
-tasks.withType(TestReport) {
-    reportOn subprojects.tasks.test.binResultsDir
-    destinationDir file("$buildDir/reports/tests/test")
-}
+    tasks.withType(JacocoMerge) {
+        executionData project(':first').tasks.test.jacoco.destinationFile
+    }
 
-tasks.withType(JacocoMerge) {
-    executionData project(':first').tasks.test.jacoco.destinationFile
-}
+    tasks.withType(JacocoReport) {
+        dependsOn JacocoMerge
 
-tasks.withType(JacocoReport) {
-    dependsOn JacocoMerge
-
-    executionData JacocoMerge.destinationFile
-    sourceSets *subprojects.sourceSets.main
+        executionData JacocoMerge.destinationFile
+        sourceSets *subprojects.sourceSets.main
+    }
 }
