@@ -19,21 +19,23 @@ dependencies {
 }
 
 subprojects {
+    apply plugin: 'java'
     apply plugin: 'jacoco'
-    
-    tasks.withType(TestReport) {
-        reportOn subprojects.tasks.test.binResultsDir
-        destinationDir file("$buildDir/reports/tests/test")
-    }
+}
 
-    tasks.withType(JacocoMerge) {
-        executionData project(':first').tasks.test.jacoco.destinationFile
-    }
+task testReport(type: TestReport) {
+    reportOn subprojects.tasks.test.binResultsDir
+    destinationDir file("$buildDir/reports/tests/test")
+}
 
-    tasks.withType(JacocoReport) {
-        dependsOn JacocoMerge
+task jacocoMerge(type: JacocoMerge) {
+    executionData project(':child1').tasks.test.jacoco.destinationFile
+    executionData project(':child2').tasks.test.jacoco.destinationFile
+}
 
-        executionData JacocoMerge.destinationFile
-        sourceSets *subprojects.sourceSets.main
-    }
+task jacocoReport(type: JacocoReport) {
+    dependsOn jacocoMerge
+
+    executionData jacocoMerge.destinationFile
+    sourceSets *subprojects.sourceSets.main
 }
