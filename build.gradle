@@ -18,5 +18,20 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-apply from: 'gradle/subproject.gradle'
-apply from: 'gradle/javadoc-tasks.gradle'
+
+task testReport(type: TestReport) {
+    reportOn subprojects.tasks.test.binResultsDir
+    destinationDir file("$buildDir/reports/tests/test")
+}
+
+task jacocoMerge(type: JacocoMerge) {
+    executionData project(':child1').tasks.test.jacoco.destinationFile
+    executionData project(':child2').tasks.test.jacoco.destinationFile
+}
+
+task jacocoReport(type: JacocoReport) {
+    dependsOn jacocoMerge
+
+    executionData jacocoMerge.destinationFile
+    sourceSets *subprojects.sourceSets.main
+}
