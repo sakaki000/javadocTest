@@ -15,7 +15,6 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-    testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
 task testReport(type: TestReport) {
