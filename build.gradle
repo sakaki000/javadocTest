@@ -18,11 +18,6 @@ dependencies {
     testImplementation 'org.jacoco:org.jacoco.agent:0.8.5'
 }
 
-subprojects {
-    apply plugin: 'java'
-    apply plugin: 'jacoco'
-}
-
 task testReport(type: TestReport) {
     reportOn subprojects.tasks.test.binResultsDir
     destinationDir file("$buildDir/reports/tests/test")
