@@ -29,8 +29,7 @@ task testReport(type: TestReport) {
 }
 
 task jacocoMerge(type: JacocoMerge) {
-    executionData project(':child1').tasks.test.jacoco.destinationFile
-    executionData project(':child2').tasks.test.jacoco.destinationFile
+    executionData project(':first').tasks.test.jacoco.destinationFile
 }
 
 task jacocoReport(type: JacocoReport) {
