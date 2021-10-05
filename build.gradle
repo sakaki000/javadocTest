@@ -19,19 +19,18 @@ dependencies {
 }
 
 
-task testReport(type: TestReport) {
+tasks.withType(TestReport) {
     reportOn subprojects.tasks.test.binResultsDir
     destinationDir file("$buildDir/reports/tests/test")
 }
 
-task jacocoMerge(type: JacocoMerge) {
-    executionData project(':child1').tasks.test.jacoco.destinationFile
-    executionData project(':child2').tasks.test.jacoco.destinationFile
+tasks.withType(JacocoMerge) {
+    executionData project(':first').tasks.test.jacoco.destinationFile
 }
 
-task jacocoReport(type: JacocoReport) {
-    dependsOn jacocoMerge
+tasks.withType(JacocoReport) {
+    dependsOn JacocoMerge
 
-    executionData jacocoMerge.destinationFile
+    executionData JacocoMerge.destinationFile
     sourceSets *subprojects.sourceSets.main
 }
