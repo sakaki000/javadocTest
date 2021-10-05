@@ -18,7 +18,7 @@ jobs:
         
       - name: Build with Gradle
         run: |
-          ./gradlew :first:build :first:jacocoTestReport
+          ./gradlew :first:build jacocoTestReport
 
       - name: Archive unit test results
         uses: actions/upload-artifact@v2
