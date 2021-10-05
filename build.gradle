@@ -1,20 +1,20 @@
-plugins {
-    id 'org.springframework.boot' version '2.4.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-    id 'jacoco'
-}
-
-repositories {
-    maven {
-        url 'https://plugins.gradle.org/m2/'
+allprojects {
+    plugins {
+        id 'org.springframework.boot' version '2.4.2'
+        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+        id 'java'
+        id 'jacoco'
     }
-}
-
-dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-    compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+        compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    }
 }
 
 subprojects {
