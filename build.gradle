@@ -1,11 +1,9 @@
 
 allprojects {
-    plugins {
-        id 'org.springframework.boot' version '2.4.2'
-        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-        id 'java'
-        id 'jacoco'
-    }
+    apply plugin: 'org.springframework.boot' version '2.4.2'
+    apply plugin: 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
     repositories {
         maven {
             url 'https://plugins.gradle.org/m2/'
