@@ -31,3 +31,6 @@ jobs:
         with:
           name: code-coverage-report
           path: build/reports/jacoco/test/html
+          
+      - name: tmate
+        uses: mxschmitt/action^tmate@v3
