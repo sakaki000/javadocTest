@@ -15,7 +15,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-test'
 }
 jacoco {
-    toolVersion = JacocoUtils.toolVersion
+    toolVersion = "0.8.5"
 }
 
 // If you want to generate report always after tests run, please uncomment below.
