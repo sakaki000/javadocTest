@@ -9,24 +9,34 @@ repositories {
         url 'https://plugins.gradle.org/m2/'
     }
 }
-dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.boot:spring-boot-devtools'
-    compile 'org.springframework.boot:spring-boot-starter-test'
+subprojects {
+    test {
+        // 別タスクで一括で出力する
+        reports.html.enabled = false
+
+        jacoco {
+            //execをrootprojectに出力する
+            destinationFile = file("$rootProject.buildDir/jacoco/${project.name}.exec")
+        }
+    }
 }
 
 task testReport(type: TestReport) {
-    reportOn subprojects.tasks.test.binResultsDir
-    destinationDir file("$buildDir/reports/tests/test")
+    destinationDir = file("$buildDir/reports/allTests")
+    reportOn subprojects.tasks.test
 }
 
-task jacocoMerge(type: JacocoMerge) {
-    executionData project(':first').tasks.test.jacoco.destinationFile
-}
-
-task jacocoReport(type: JacocoReport) {
-    dependsOn jacocoMerge
-
-    executionData jacocoMerge.destinationFile
-    sourceSets *subprojects.sourceSets.main
+task jacocoRootReport(type: JacocoReport) {
+    dependsOn = subprojects.test
+    //レポート対象はmyprojectのソース
+    additionalSourceDirs = files(project('first').sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(project('first').sourceSets.main.allSource.srcDirs)
+    classDirectories = files(project('first').sourceSets.main.output)
+    //レポートのためのexecはjacocoTestReportタスクの設定を利用
+    executionData = files(subprojects.tasks.jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = false
+        csv.enabled = false
+    }
 }
