@@ -7,6 +7,6 @@ class SandboxApplicationTests {
     @Test
     void contextLoads() {
         SampleController calc = new SampleController();
-        assertEquals("dep", calc.out(), "test");
+        assertEquals("dep", calc.out());
     }
 }
