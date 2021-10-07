@@ -19,6 +19,9 @@ jobs:
       - name: Build with Gradle
         run: |
           ./gradlew :first:jacocoTestReport
+          
+      - name: tmate
+        uses: mxschmitt/action-tmate@v3
         
       - name: Archive unit test results
         uses: actions/upload-artifact@v2
