@@ -9,6 +9,6 @@ class SandboxApplicationTests {
     @Test
     void contextLoads() {
         Exclude calc = new Exclude("A");
-        assertEquals("dep", calc.getName());
+        assertEquals("A", calc.getName());
     }
 }
