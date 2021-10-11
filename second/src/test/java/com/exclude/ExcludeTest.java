@@ -13,7 +13,7 @@ class SandboxApplicationTests {
     }
     
     @Test
-    void contextLoads() {
+    void contextLoads2() {
         Exclude calc = new Exclude("C");
         assertEquals("C", calc.getName());
     }
