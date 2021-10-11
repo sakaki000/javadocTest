@@ -19,9 +19,17 @@ jobs:
       - name: Build with Gradle
         run: |
           ./gradlew :first:test
+          ./gradlew :second:test
           
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./first/
+
+          
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./second/
