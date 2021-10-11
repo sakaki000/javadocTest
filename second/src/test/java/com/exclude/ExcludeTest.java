@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SandboxApplicationTests {
     @Test
     void contextLoads() {
-        Exclude  calc = new Exclude ();
-        assertEquals("dep", calc.Exclude("A"));
+        Exclude calc = new Exclude("A");
+        assertEquals("dep", calc.getName());
     }
 }
