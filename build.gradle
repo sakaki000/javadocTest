@@ -5,9 +5,9 @@ buildscript {
         }
     }
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter-web'
-        compile 'org.springframework.boot:spring-boot-devtools'
-        compile 'org.springframework.boot:spring-boot-starter-test'
+        classpath 'org.springframework.boot:spring-boot-starter-web'
+        classpath 'org.springframework.boot:spring-boot-devtools'
+        classpath 'org.springframework.boot:spring-boot-starter-test'
     } 
 }
 
