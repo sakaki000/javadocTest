@@ -7,7 +7,6 @@ public class Exclude {
   private final String name;
   public Exclude(String name) {
     this.name = name;
-    new GrowthList();
   }
 
   public String getName() {
