@@ -1,5 +1,4 @@
 name: Test with Gradle
-
 on: 
   pull_request:
     paths:
