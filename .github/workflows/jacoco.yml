@@ -1,6 +1,9 @@
 name: Test with Gradle
-
-on: workflow_dispatch
+on: 
+  pull_request:
+    paths:
+      - 'first/src/**'
+      - 'second/src/**'
 
 jobs:
   build:
