@@ -17,6 +17,4 @@ class SandboxApplicationTests {
         Exclude calc = new Exclude("C");
         assertEquals("C", calc.getName());
     }
-    
-
 }
