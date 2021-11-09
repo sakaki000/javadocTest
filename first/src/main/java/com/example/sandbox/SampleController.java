@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in testJavadocGenerarte 
-     * @param out testJavadocGenerarte
-     * @return String testJavadocGenerarte
+     * @param in testJavadocGenerarte2 
+     * @param out testJavadocGenerarte2
+     * @return String testJavadocGenerarte2
      */
     public String get(String in, String out) {
         return "Hello";
@@ -18,7 +18,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
-    *  @return String testJavadocGenerarte
+    *  @return String testJavadocGenerarte2
     */
     public String out() {
         return "dep";
