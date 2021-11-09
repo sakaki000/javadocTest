@@ -1,7 +1,7 @@
 name: Javadoc Genarate
 on: 
   pull_request:
-    branches: [ master ]
+    branches: [ topic_branch_master ]
     types: [ closed ]
 
 jobs:
