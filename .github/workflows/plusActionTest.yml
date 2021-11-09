@@ -10,8 +10,8 @@ jobs:
 
     env:
       # javadoc用ブランチ名
-      BRANCH_JAVADOC: javadocOnly
-      BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
+      BRANCH_JAVADOC: javadocOnly2
+      BRANCH_JAVADOC_ORIGIN: origin/javadocOnly2
       # masterブランチ名
       BRANCH_MASTER: topic_branch_master
       BRANCH_MASTER_ORIGIN: origin/topic_branch_master
