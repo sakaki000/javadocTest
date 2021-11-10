@@ -8,7 +8,10 @@ public class Exclude {
   public Exclude(String name) {
     this.name = name;
   }
-
+  
+  /***
+   * @return String secondChange
+   */
   public String getName() {
     String hoge = name;
     if(hoge.equals("A") || hoge.equals("B")) {
