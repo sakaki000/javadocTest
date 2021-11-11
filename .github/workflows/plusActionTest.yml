@@ -72,7 +72,12 @@ jobs:
           
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-        
+
+      # docsフォルダの内容入れ替え
+      - name: Update javadoc
+        run: |
+          ls -l first/build/docs/javadoc/
+
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
