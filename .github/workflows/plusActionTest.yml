@@ -76,11 +76,6 @@ jobs:
       # docsフォルダの内容入れ替え
       - name: Update javadoc
         run: |
-          ls -l first/build/docs/javadoc/
-
-      # docsフォルダの内容入れ替え
-      - name: Update javadoc
-        run: |
           # docsフォルダ作成
           mkdir -p ./docs/first
           mkdir -p ./docs/second
