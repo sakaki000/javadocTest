@@ -1,7 +1,7 @@
 name: Javadoc Genarate
 on: 
   pull_request:
-    branches: [ master ]
+    branches: [ topic_branch_master ]
     types: [ closed ]
 
 jobs:
@@ -13,8 +13,8 @@ jobs:
       BRANCH_JAVADOC: javadocOnly
       BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
       # masterブランチ名
-      BRANCH_MASTER: master
-      BRANCH_MASTER_ORIGIN: origin/master
+      BRANCH_MASTER: topic_branch_master
+      BRANCH_MASTER_ORIGIN: origin/topic_branch_master
 
     steps:
       # masterブランチをチェックアウト
