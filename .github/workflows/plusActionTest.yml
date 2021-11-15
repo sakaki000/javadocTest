@@ -70,10 +70,8 @@ jobs:
              exit 0
            fi
           
-      # Javadoc生成
-      - name: Build javadoc
-        run: |
-           ls -l
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
         
       # docsフォルダの内容入れ替え
       - name: Update javadoc
