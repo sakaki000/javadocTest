@@ -1,7 +1,7 @@
 name: Javadoc Genarate
 on: 
   pull_request:
-    branches: [ topic_master ]
+    branches: [ master ]
     types: [ closed ]
 
 jobs:
@@ -13,8 +13,8 @@ jobs:
       BRANCH_JAVADOC: javadocOnly
       BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
       # masterブランチ名
-      BRANCH_MASTER: topic_master
-      BRANCH_MASTER_ORIGIN: origin/topic_master
+      BRANCH_MASTER: master
+      BRANCH_MASTER_ORIGIN: origin/master
 
     steps:
       # masterブランチをチェックアウト
@@ -31,9 +31,6 @@ jobs:
 
       # git configの設定
       - uses: fregante/setup-git-user@v1
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       
       # javadoc専用ブランチがなければmasterブランチのソースをもとに作成
       - name: Create branch
