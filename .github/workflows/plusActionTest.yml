@@ -45,7 +45,7 @@ jobs:
           # javadoc専用ブランチをチェックアウト
           git checkout ${{env.BRANCH_JAVADOC}}
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
-          git merge --allow-unrelated-histories -Xtheirs ${{env.BRANCH_MASTER_ORIGIN}}
+          git merge --allow-unrelated-histories -Xtheirs ${{env.BRANCH_MASTER}}
 
       # JDKの設定
       - name: Set up JDK 1.8
