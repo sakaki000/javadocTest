@@ -42,7 +42,6 @@ jobs:
       - name: Merge branch
         if: steps.check.outputs.branch == env.BRANCH_JAVADOC_ORIGIN
         run: |
-          git rebase topic_master javadocOnly
           # javadoc専用ブランチをチェックアウト
           git checkout ${{env.BRANCH_JAVADOC}}
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
