@@ -28,9 +28,13 @@ jobs:
         run: |
           git fetch
           echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e ${{env.BRANCH_JAVADOC}})"
+
       # git configの設定
       - uses: fregante/setup-git-user@v1
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+      
       # javadoc専用ブランチがなければmasterブランチのソースをもとに作成
       - name: Create branch
         if: steps.check.outputs.branch != env.BRANCH_JAVADOC_ORIGIN
