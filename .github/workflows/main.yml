@@ -1,0 +1,19 @@
+name: test
+on: 
+  workflow_dispatch
+
+jobs:
+  javadoc_generate:
+    runs-on: ubuntu-latest
+
+    env:
+      # javadoc用ブランチ名
+      BRANCH_JAVADOC: javadocOnly
+      BRANCH_JAVADOC_ORIGIN: origin/javadocOnly
+      # masterブランチ名
+      BRANCH_MASTER: develop
+      BRANCH_MASTER_ORIGIN: origin/develop
+
+    steps:
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
