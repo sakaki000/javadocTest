@@ -18,7 +18,7 @@ jobs:
       # masterブランチをチェックアウト
       - uses: actions/checkout@v2
         with:
-          ref: ${{env.BRANCH_MASTER}}
+          ref: ${{env.BRANCH_JAVADOC}}
 
       # git configの設定
       - uses: fregante/setup-git-user@v1
