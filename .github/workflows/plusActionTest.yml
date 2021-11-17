@@ -18,21 +18,20 @@ jobs:
 
     steps:
       # masterブランチをチェックアウト
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{env.BRANCH_MASTER}}
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ref: ${{env.BRANCH_MASTER}}
 
       # javadoc専用ブランチの存在確認
       - name: Check javadoc branch exist
         id: check
         run: |
-          git fetch
+          git clone https://github.com/sakaki000/javadocTest.git
+          git checkout develop
           echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e ${{env.BRANCH_JAVADOC}})"
+          
       # git configの設定
       - uses: fregante/setup-git-user@v1
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       
       # javadoc専用ブランチがなければmasterブランチのソースをもとに作成
       - name: Create branch
