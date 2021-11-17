@@ -47,6 +47,7 @@ jobs:
         run: |
           # javadoc専用ブランチをチェックアウト
           git checkout ${{env.BRANCH_JAVADOC}}
+          git pull
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
           git merge --allow-unrelated-histories -Xtheirs ${{env.BRANCH_MASTER}}
 
