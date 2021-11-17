@@ -17,17 +17,16 @@ jobs:
       BRANCH_MASTER_ORIGIN: origin/develop
 
     steps:
-      # masterブランチをチェックアウト
-      # - uses: actions/checkout@v2
-      #   with:
-      #     ref: ${{env.BRANCH_MASTER}}
+    # masterブランチをチェックアウト
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_MASTER}}
 
       # javadoc専用ブランチの存在確認
       - name: Check javadoc branch exist
         id: check
         run: |
-          git clone https://github.com/sakaki000/javadocTest.git
-          git checkout develop
+          git fetch
           echo "##[set-output name=branch;]$(git branch -a --format="%(refname:short)" | grep -e ${{env.BRANCH_JAVADOC}})"
           
       # git configの設定
