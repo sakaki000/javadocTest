@@ -15,5 +15,13 @@ jobs:
       BRANCH_MASTER_ORIGIN: origin/develop
 
     steps:
+      # masterブランチをチェックアウト
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{env.BRANCH_MASTER}}
+
+      # git configの設定
+      - uses: fregante/setup-git-user@v1
+
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
