@@ -7,9 +7,9 @@ public class SampleController {
 
 
     /***
-     * @param in topic 
-     * @param out topic
-     * @return String topic
+     * @param in test 
+     * @param out test
+     * @return String test
      */
     public String get(String in, String out) {
         return "Hello";
@@ -18,7 +18,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
-    *  @return String topic
+    *  @return String test
     */
     public String out() {
         return "dep";
