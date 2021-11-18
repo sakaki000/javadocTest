@@ -8,7 +8,7 @@ public class SandboxApplicationChageName {
 
 	public static void main(String[] args) {
 		System.out.println("a");
-		SpringApplication.run(SandboxApplication.class, args);
+		SpringApplication.run(SandboxApplicationChageName.class, args);
 	}
 
 	/**
