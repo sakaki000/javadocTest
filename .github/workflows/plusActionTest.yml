@@ -48,7 +48,7 @@ jobs:
           # mergeコマンドでmasterの内容を取り込む(masterの変更優先)
           git merge --allow-unrelated-histories -Xtheirs ${{env.BRANCH_MASTER}}
           # 不要ファイルの削除
-          git diff --name-only develop | grep -v 'docs' | xargs git rm
+          git diff --name-only develop | grep -v '^docs/' | xargs git rm
           git commit -m 'delete unnecessary files'
           git push origin ${{env.BRANCH_JAVADOC}}
 
