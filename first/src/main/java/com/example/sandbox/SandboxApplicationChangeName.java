@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SandboxApplication {
+public class SandboxApplicationChangeName {
 
 	public static void main(String[] args) {
 		System.out.println("a");
-		SpringApplication.run(SandboxApplication.class, args);
+		SpringApplication.run(SandboxApplicationChangeName.class, args);
 	}
 
 	/**
