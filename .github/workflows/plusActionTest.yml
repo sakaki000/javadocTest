@@ -51,7 +51,6 @@ jobs:
           ! git diff --name-only ${{env.BRANCH_MASTER}} | grep -v '^docs/'
           if [ $? -eq 1 ]; then
             git diff --name-only ${{env.BRANCH_MASTER}} | grep -v '^docs/' | xargs git rm
-            git commit -m 'delete unnecessary files'
           fi
 
       # JDKの設定
