@@ -1,6 +1,9 @@
 name: Javadoc Check
 on: 
-  workflow_dispatch
+  pull_request:
+    paths:
+      - 'first/src/**'
+      - 'second/src/**'
 
 jobs:
   javadoc_check:
