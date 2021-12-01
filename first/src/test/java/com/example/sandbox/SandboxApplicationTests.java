@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SandboxApplicationTests {
     @Test
     void contextLoads() {
-        SampleController calc = new SampleController();
+        SandboxApplication calc = new SandboxApplication();
         assertEquals("dep", calc.out());
     }
 }
