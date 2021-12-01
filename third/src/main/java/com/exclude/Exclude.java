@@ -8,7 +8,7 @@ public class Exclude {
 
     /***
      * topic_staging3_not_work
-     * not work actions
+     * merge block test
      */
     public String get(String in, String out) {
         return "Hello";
