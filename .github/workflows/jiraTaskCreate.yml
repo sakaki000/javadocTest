@@ -30,4 +30,4 @@ jobs:
         # issuesの本文が説明になるように設定
         description: ${{ github.event.issue.body}}
         # その他設定
-        fields: '{"labels": [ "test" ]}'
+        fields: '{"labels": [ "test" ] , "Story Point": "3"}'
