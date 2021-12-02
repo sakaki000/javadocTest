@@ -24,7 +24,7 @@ jobs:
         # プロジェクトキーを指定
         project: TP
         # 課題タイプを指定
-        issuetype: Incident
+        issuetype: Story
         # issuesのタイトルが要約になるように設定
         summary: ${{ github.event.issue.title}}
         # issuesの本文が説明になるように設定
