@@ -8,6 +8,7 @@ public class SandboxApplication {
 
 	/**
 	*  コメントの説明文
+	*  @param パラメータ
 	*/
 	@Deprecated
 	public static void main(String[] args) {
