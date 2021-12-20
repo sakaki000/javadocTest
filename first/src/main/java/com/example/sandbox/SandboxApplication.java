@@ -6,10 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SandboxApplication {
 
-	/**
-	*  コメントの説明文
-	*  @param パラメータ
-	*/
 	@Deprecated
 	public static void main(String[] args) {
 		System.out.println("a");
