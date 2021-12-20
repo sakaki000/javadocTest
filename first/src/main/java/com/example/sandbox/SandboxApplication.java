@@ -8,7 +8,6 @@ public class SandboxApplication {
 
 	/**
 	*  コメントの説明文
-        *  @return String fromTopic
 	*/
 	@Deprecated
 	public static void main(String[] args) {
