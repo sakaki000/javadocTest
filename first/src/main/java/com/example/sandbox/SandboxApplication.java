@@ -14,9 +14,9 @@ public class SandboxApplication {
 	/**
 	*  コメントの説明文
         *  @return String fromTopic
-	*  @deprecated デプリケイテッド２
-	*/
-	@Deprecated(forRemoval=true)
+        * @deprecated 古い仕様なので、アクセスがなくなったら削除予定。最新仕様は {@link IResumeCorrectionStrategy IResumeCorrectionStrategy}。
+        */
+        @Deprecated(forRemoval = true)
 	public String out() {
 		return "dep";
 	}
