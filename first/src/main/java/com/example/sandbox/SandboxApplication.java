@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SandboxApplication {
 
-	@Deprecated
+	/**
+	*  コメントの説明文
+        *  @return String fromTopic
+	*  @Deprecated
+	*/
 	public static void main(String[] args) {
 		System.out.println("a");
 		SpringApplication.run(SandboxApplication.class, args);
@@ -15,8 +19,8 @@ public class SandboxApplication {
 	/**
 	*  コメントの説明文
         *  @return String fromTopic
+	*  @Deprecated(forRemoval=true)
 	*/
-	@Deprecated(forRemoval=true)
 	public String out() {
 		return "dep";
 	}
