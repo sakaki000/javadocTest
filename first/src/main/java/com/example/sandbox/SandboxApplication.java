@@ -8,7 +8,8 @@ public class SandboxApplication {
 
 	/**
 	*  コメントの説明文
-        *  @return String fromTopic
+        *  @param String fromTopic
+	*  @deprecated デプリケイテッド１
 	*/
 	@Deprecated
 	public static void main(String[] args) {
@@ -19,6 +20,7 @@ public class SandboxApplication {
 	/**
 	*  コメントの説明文
         *  @return String fromTopic
+	*  @deprecated デプリケイテッド２
 	*/
 	@Deprecated(forRemoval=true)
 	public String out() {
