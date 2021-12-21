@@ -14,9 +14,9 @@ public class SandboxApplication {
 	/**
 	*  コメントの説明文
         *  @return String fromTopic
-        *　　　　@deprecated 古い仕様なので、アクセスがなくなったら削除予定。
+        *  @deprecated 古い仕様なので、アクセスがなくなったら削除予定。
         */
-        @Deprecated(forRemoval = true)
+        @Deprecated
 	public String out() {
 		return "dep";
 	}
