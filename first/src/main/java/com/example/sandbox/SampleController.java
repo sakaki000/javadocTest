@@ -18,7 +18,7 @@ public class SampleController {
 
     /**
     *  コメントの説明文
-    *  @return String test
+    *  @return String comment
     *  @deprecated 古い仕様なので、アクセスがなくなったら削除予定。
     */
     @Deprecated
