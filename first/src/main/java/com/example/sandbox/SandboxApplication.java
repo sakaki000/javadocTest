@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SandboxApplication {
 
 	public static void main(String[] args) {
-		System.out.println(out());
+		System.out.println("a");
 		SpringApplication.run(SandboxApplication.class, args);
 	}
 
