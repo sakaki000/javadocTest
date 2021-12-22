@@ -13,7 +13,7 @@ public class SandboxApplication {
 
 	/**
 	*  コメントの説明文
-        *  @return String fromTopic
+        *  @return String commentTest
         *  @deprecated 古い仕様なので、アクセスがなくなったら削除予定。
         */
         @Deprecated
