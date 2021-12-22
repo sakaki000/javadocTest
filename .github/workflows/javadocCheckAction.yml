@@ -25,13 +25,12 @@ jobs:
 
       # Javadoc生成
       - name: Build javadoc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ github.event.pull_request.comments_url }}
         run: |
-           ! ./gradlew :first:javadoc 2>&1 | grep -A 2 -e error:
-           build1=$?
-           ! ./gradlew :second:javadoc 2>&1 | grep -A 2 -e error:
-           build2=$?
-           if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
-             exit 1
-           else
-             exit 0
-           fi
+          echo "1st" >> comments
+          echo "2nd" >> comments
+          echo "3rd" >> comments
+          sed -i -z 's/\n/\\n/g' comments
+          curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat comments)\"}" ${URL}
