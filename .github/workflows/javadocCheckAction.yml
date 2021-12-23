@@ -41,6 +41,6 @@ jobs:
             grep -A 2 -e 'warning:' firstComment > prComment
             grep -A 2 -e 'warning:' secondComment >> prComment
             sed -i -z 's/\n/\\n/g' prComment
-            curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat comments)\"}" ${URL}
+            curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat prComment)\"}" ${URL}
             exit 0
           fi
