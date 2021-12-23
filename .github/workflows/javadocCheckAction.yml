@@ -35,8 +35,4 @@ jobs:
           build1=$?
           ! grep -A 2 -e 'error:' secondComment
           build2=$?
-          if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
-            exit 1
-          else
-            exit 0
-          fi
+
