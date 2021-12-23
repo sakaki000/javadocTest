@@ -38,8 +38,9 @@ jobs:
           if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
             exit 1
           else
-            grep -A 2 -e 'warning:' firstComment
-            grep -A 2 -e 'warning:' secondComment
-            sed -i -z 's/\n/\\n/g' comments
+            grep -A 2 -e 'warning:' firstComment > prComment
+            grep -A 2 -e 'warning:' secondComment >> prComment
+            sed -i -z 's/\n/\\n/g' prComment
+            curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat comments)\"}" ${URL}
             exit 0
           fi
