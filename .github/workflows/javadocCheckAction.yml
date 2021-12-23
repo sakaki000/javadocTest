@@ -31,3 +31,16 @@ jobs:
         run: |
           ! ./gradlew :first:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > firstComment
           ! ./gradlew :second:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > secondComment
+          ! grep -A 2 -e 'error:' firstComment
+          build1=$?
+          ! grep -A 2 -e 'error:' secondComment
+          build2=$?
+          if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
+            exit 1
+          else
+            ! grep -A 2 -e 'warning:' firstComment > prComment
+            ! grep -A 2 -e 'warning:' secondComment >> prComment
+            sed -i -z 's/\n/\\n/g' prComment
+            curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat prComment)\"}" ${URL}
+            exit 0
+          fi
