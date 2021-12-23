@@ -8,7 +8,6 @@ public class SandboxApplication {
 
 	public static void main(String[] args) {
 		SampleController sample = new SampleController();
-		System.out.println(sample.get());
 		SpringApplication.run(SandboxApplication.class, args);
 	}
 
