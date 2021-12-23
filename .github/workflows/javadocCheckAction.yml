@@ -31,8 +31,3 @@ jobs:
         run: |
           ./gradlew :first:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > firstComment
           ./gradlew :second:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > secondComment
-          ! grep -A 2 -e 'error:' firstComment
-          build1=$?
-          ! grep -A 2 -e 'error:' secondComment
-          build2=$?
-
