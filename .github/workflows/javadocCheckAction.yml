@@ -29,14 +29,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           URL: ${{ github.event.pull_request.comments_url }}
         run: |
-          ! ./gradlew :first:javadoc 2>&1 | grep -A 2 -e 'error:'
+          ./gradlew :first:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > firstComment
+          ./gradlew :second:javadoc 2>&1 | grep -A 2 -e 'error:' -e 'warning:' > secondComment
+          ! grep -A 2 -e 'error:' firstComment
           build1=$?
-          ! ./gradlew :second:javadoc 2>&1 | grep -A 2 -e 'error:'
+          ! grep -A 2 -e 'error:' secondComment
           build2=$?
           if [ $build1 -eq 1 ] || [ $build2 -eq 1 ]; then
             exit 1
           else
-            ./gradlew :first:javadoc 2>&1 | grep -A 2 -e 'warning:' >> comments
+            grep -A 2 -e 'warning:' firstComment
+            grep -A 2 -e 'warning:' secondComment
             sed -i -z 's/\n/\\n/g' comments
             exit 0
           fi
