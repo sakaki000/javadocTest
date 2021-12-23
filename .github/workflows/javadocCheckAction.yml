@@ -42,7 +42,7 @@ jobs:
             ! grep -A 2 -e 'warning:' secondComment >> prComment
             sed -i -z 's/\//\\\//g' prComment
             sed -i -z 's/\n/\\n/g' prComment
-            sed -i -z 's/$'\t'/\\t/g' prComment
+            sed -i -z 's/\t/\\t/g' prComment
             cat prComment
             exit 0
           fi
