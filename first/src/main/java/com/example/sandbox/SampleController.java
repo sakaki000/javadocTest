@@ -21,7 +21,7 @@ public class SampleController {
     *  @return String test
     *  @deprecated 古い仕様なので、アクセスがなくなったら削除予定。
     */
-    @Deprecated
+    @Deprecated(forRemoval=true)
     public String out() {
         return "dep";
     }
