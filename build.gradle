@@ -50,4 +50,7 @@ allprojects {
             html.enabled false
         }
     }
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation"
+    }
 }
