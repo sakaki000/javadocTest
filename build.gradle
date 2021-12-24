@@ -50,7 +50,7 @@ allprojects {
             html.enabled false
         }
     }
-    tasks.withType(JavaCompile) {
-        options.compilerArgs << "-Xlint:-removal"
-    }
+    //tasks.withType(JavaCompile) {
+    //    options.compilerArgs << "-Xlint:-removal"
+    //}
 }
