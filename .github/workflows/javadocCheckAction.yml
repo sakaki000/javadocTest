@@ -43,6 +43,6 @@ jobs:
             sed -i -z 's/\//\\\//g' prComment
             sed -i -z 's/\n/\\n/g' prComment
             sed -i -z 's/\t/\\t/g' prComment
-            curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" --data '{"name":"testrepo"}' ${URL}
+            curl --data '{"name":"testrepo"}' -X POST -H "Header" ${URL}
             exit 0
           fi
