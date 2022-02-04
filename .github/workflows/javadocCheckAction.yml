@@ -40,9 +40,6 @@ jobs:
           else
             ! grep -A 2 -e 'warning:' firstComment > prComment
             ! grep -A 2 -e 'warning:' secondComment >> prComment
-            sed -i -z 's/\//\\\//g' prComment
-            sed -i -z 's/\n/\\n/g' prComment
-            sed -i -z 's/\t/\\t/g' prComment
             gh pr comment -F ./prComment "${URL}"
             exit 0
           fi
