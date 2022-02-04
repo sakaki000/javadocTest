@@ -44,11 +44,6 @@ jobs:
             sed -i -z 's/\n/\\n/g' prComment
             sed -i -z 's/\t/\\t/g' prComment
             // curl -X POST -H "Authorization: token ${GITHUB_TOKEN}" -d "{\"body\": \"$(cat prComment)\"}" ${URL}
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'pushトリガーだとPRにコメントできないぞ'
-            })
+            gh pr comment -F ./prComment "${URL}"
             exit 0
           fi
