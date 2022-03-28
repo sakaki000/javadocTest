@@ -1,0 +1,1 @@
+READONLY_test delete_test.sql
