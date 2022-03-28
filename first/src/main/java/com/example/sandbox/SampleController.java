@@ -2,9 +2,6 @@ package com.example.sandbox;
 
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @deprecated 古い仕様なので、アクセスがなくなったら削除予定。
- */
 @Deprecated(forRemoval = true)
 public class SampleController {
 
