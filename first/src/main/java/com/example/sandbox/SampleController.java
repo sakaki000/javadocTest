@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Deprecated(forRemoval = true)
 public class SampleController {
 
-    /***
+    /**
+     * 追加したよ
      * @param in test 
      * @param out test
      * @return String test
