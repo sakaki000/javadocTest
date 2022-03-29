@@ -2,7 +2,6 @@ package com.example.sandbox;
 
 import org.springframework.web.bind.annotation.RestController;
 
-@Deprecated(forRemoval = true)
 public class SampleController {
 
     /**
