@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
 
     /**
-     * 追加したよ
+     * 追加したんだよ
      * @param in test 
      * @param out test
      * @return String test
